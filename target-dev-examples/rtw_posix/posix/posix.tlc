@@ -1,0 +1,245 @@
+%% SYSTLC: Posix Real-Time Target TMF: posix.tmf MAKE: make_rtw EXTMODE: ext_comm
+%%
+%% Copyright 2011 DLR e.V.
+%% Abstract: Posix real-time system target file.
+%%
+
+%selectfile NULL_FILE
+
+%assign TargetType = "RT"
+%assign Language   = "C"
+%assign GenRTModel = 1
+%assign _GRT_      = 1
+
+%include "codegenentry.tlc"
+
+
+%% The contents between 'BEGIN_RTW_OPTIONS' and 'END_RTW_OPTIONS' in this file
+%% are used to maintain backward compatibility to R13 and preR13 custom target 
+%% file only.  If you want to use this file as a template to develop your
+%% own system target file, you need to remove the 'CONFIGSET_TARGET_COMPONENT'
+%% section at the end of this file.
+%%
+/%
+  BEGIN_RTW_OPTIONS
+
+  rtwoption_index = 0;
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt        = 'Posix code generation options';
+  rtwoptions(rtwoption_index).type          = 'Category';
+  rtwoptions(rtwoption_index).enable        = 'on';  
+  rtwoptions(rtwoption_index).default       = 11;  % number of items under this category excluding this one. 
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Additional compiler flags';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default      = '-O2';
+  rtwoptions(rtwoption_index).tlcvariable  = 'AdditionalCompilerFlags';
+  rtwoptions(rtwoption_index).makevariable = 'ADDITIONAL_CFLAGS';
+  rtwoptions(rtwoption_index).tooltip      = ...
+    ['Additional flags passed to C/C++ compiler'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Additional linker flags';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default      = '';
+  rtwoptions(rtwoption_index).tlcvariable  = 'AdditionalLinkerFlags';
+  rtwoptions(rtwoption_index).makevariable = 'ADDITIONAL_LDFLAGS';
+  rtwoptions(rtwoption_index).tooltip      = ...
+    ['Additional flags passed to linker'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'MAT-file logging';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'MatFileLogging';
+  rtwoptions(rtwoption_index).makevariable   = 'MAT_FILE';
+  rtwoptions(rtwoption_index).tooltip        = ...
+    ['Instrument code to log data to a MATLAB .mat file'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'MAT-file variable name modifier';
+  rtwoptions(rtwoption_index).type           = 'Popup';
+  rtwoptions(rtwoption_index).default        = 'rt_';
+  rtwoptions(rtwoption_index).popupstrings   = 'rt_|_rt|none';
+  rtwoptions(rtwoption_index).tlcvariable    = 'LogVarNameModifier';
+  rtwoptions(rtwoption_index).tooltip        = ...
+    ['prefix rt_ to variable name,', sprintf('\n'), ...
+    'append _rt to variable name,', sprintf('\n'), ...
+    'or no modification'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt      = 'Local block outputs';
+  rtwoptions(rtwoption_index).type        = 'Checkbox';
+  rtwoptions(rtwoption_index).default     = 'off';
+  rtwoptions(rtwoption_index).tlcvariable = 'LocalBlockOutputs';
+  rtwoptions(rtwoption_index).tooltip     = [...
+    'RTW attempts to place the block output signals in variables', sprintf('\n'), ...
+    'within local (as opposed to global) scope. When checked,', sprintf('\n'), ...
+    'the amount of stack used by local variables is limited', sprintf('\n'), ...
+    'by setting the TLC variables: MaxStackSize and MaxStackVariableSize,', sprintf('\n'), ...
+    'in the file ''tornado.tlc''. By default, these TLC variables', sprintf('\n'), ...
+    'are set to half of the stack size that is allocated in ', sprintf('\n'), ...
+    'in taskspawn of rt_main.c, in order to prevent stack overflow.'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Code Format';
+  rtwoptions(rtwoption_index).type         = 'Popup';
+  rtwoptions(rtwoption_index).default      = 'RealTime';
+  rtwoptions(rtwoption_index).popupstrings = 'RealTime|RealTimeMalloc';
+  rtwoptions(rtwoption_index).tlcvariable  = 'CodeFormat';
+  rtwoptions(rtwoption_index).tooltip      = ['RealTime uses static memory allocation,', sprintf('\n'), ...
+    'RealTimeMalloc uses dynamic memory allocation.'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'StethoScope';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'StethoScope';
+  rtwoptions(rtwoption_index).makevariable   = 'STETHOSCOPE';
+  rtwoptions(rtwoption_index).tooltip        = ['Adds support for StethoScope monitoring',...
+    sprintf('\n'), '(can not be used with external mode)'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'Lttng';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'Lttng';
+  rtwoptions(rtwoption_index).makevariable   = 'LTTNG';
+  rtwoptions(rtwoption_index).tooltip        = ['Adds LTTNG-ust'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Base rate thread priority';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default      = '30';
+  rtwoptions(rtwoption_index).tlcvariable  = 'BasePriority';
+  rtwoptions(rtwoption_index).makevariable = 'BASE_PRIORITY';
+  rtwoptions(rtwoption_index).tooltip      = ['The base rate thread priority, sub rate threads will use an decremented ', ...
+                                sprintf('\n'), ...
+                                '(lower priority) value.'];
+  
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Base rate thread affinity mask';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default      = '0xF';
+  rtwoptions(rtwoption_index).tlcvariable  = 'BaseThreadAffinityMask';
+  rtwoptions(rtwoption_index).makevariable = 'BASE_THREAD_AFFINITY_MASK';
+  rtwoptions(rtwoption_index).tooltip      = ['The affinity mask used for base rate thread'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'Target Toolchain';
+  rtwoptions(rtwoption_index).type         = 'Popup';
+  rtwoptions(rtwoption_index).default      = 'sled11-x86-gcc4.x';
+  rtwoptions(rtwoption_index).popupstrings = 'sled11-x86-gcc4.x|sled11-x86_64-gcc4.x|vxworks6.7-x86-gcc4.x|vxworks6.8-x86-gcc4.x|vxworks6.9-x86-gcc4.x|vxworks6.9.2.3-x86-gcc4.x|vxworks6.9.3-x86-gcc4.x|vxworks6.9-armv5-gcc4.x|vxworks6.9-armv7-gcc4.x|qnx6.3sp3-x86-gcc3.3|qnx6.5-x86-gcc4.x';
+  rtwoptions(rtwoption_index).tlcvariable  = 'TargetToolchain';
+  rtwoptions(rtwoption_index).makevariable = 'TARGET_TOOLCHAIN';
+  rtwoptions(rtwoption_index).tooltip      = ['RealTime uses static memory allocation,', sprintf('\n'), ...
+    'RealTimeMalloc uses dynamic memory allocation.'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'Ensure hard realtime';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'EnsureHardRealTime';
+  rtwoptions(rtwoption_index).makevariable   = 'ENSURE_HARD_REALTIME';
+  rtwoptions(rtwoption_index).tooltip        = ['Ensures hard realtime of running model code.'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'Build without RTW framework';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'BuildWithoutFramwork';
+  rtwoptions(rtwoption_index).makevariable   = 'BUILD_WITHOUT_FRAMEWORK';
+  rtwoptions(rtwoption_index).tooltip        = '';
+
+%% --------------------------------------- 
+%% Trigger Pane
+%
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt        = 'Trigger';
+  rtwoptions(rtwoption_index).type          = 'Category';
+  rtwoptions(rtwoption_index).enable        = 'on';
+  rtwoptions(rtwoption_index).default       = 6;  % number of items under this category excluding this one. 
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt        = 'No clock source (block triggered)';
+  rtwoptions(rtwoption_index).type          = 'Checkbox';
+  rtwoptions(rtwoption_index).default       = 'off';
+  rtwoptions(rtwoption_index).tlcvariable   = 'NoClockSource';
+  rtwoptions(rtwoption_index).makevariable  = 'NO_CLOCK_SOURCE';
+  rtwoptions(rtwoption_index).callback      = 'posix_callback(hDlg, hSrc, ''NoClockSource'')';
+  rtwoptions(rtwoption_index).tooltip       = ['Adds support for no clock source', ....
+                                                 sprintf('\n'), 'if not checked, posix timer will be used'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt         = 'External clock source';
+  rtwoptions(rtwoption_index).type           = 'Checkbox';
+  rtwoptions(rtwoption_index).default        = 'off';
+  rtwoptions(rtwoption_index).tlcvariable    = 'ExternalClockSource';
+  rtwoptions(rtwoption_index).makevariable   = 'EXTERNAL_CLOCK_SOURCE';
+  rtwoptions(rtwoption_index).callback      = 'posix_callback(hDlg, hSrc, ''ExternalClockSource'')';
+  rtwoptions(rtwoption_index).tooltip        = ['Adds support for an external clock source',...
+    sprintf('\n'), 'if not checked, posix timer will be used'];
+  
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'External timer source file';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default       = '';
+  rtwoptions(rtwoption_index).tlcvariable  = 'ExternalTimerSource';
+  rtwoptions(rtwoption_index).makevariable = 'EXTERNAL_TIMER_SOURCE';
+  rtwoptions(rtwoption_index).enable        = 'off';
+  rtwoptions(rtwoption_index).tooltip       = ['Specifies the additional source code file', ...
+                                                sprintf('\n'), 'if external clock source is used.'];
+  
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'External timer includes';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default       = '';
+  rtwoptions(rtwoption_index).tlcvariable  = 'ExternalTimerIncludes';
+  rtwoptions(rtwoption_index).makevariable = 'EXTERNAL_TIMER_INCLUDES';
+  rtwoptions(rtwoption_index).enable        = 'off';
+  rtwoptions(rtwoption_index).tooltip       = ['Specifies the additional includes for compiling', ...
+                                                sprintf('\n'), 'the external timer source.'];
+  
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'External timer libraries';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default       = '';
+  rtwoptions(rtwoption_index).tlcvariable  = 'ExternalTimerLibraries';
+  rtwoptions(rtwoption_index).makevariable = 'EXTERNAL_TIMER_LIBRARIES';
+  rtwoptions(rtwoption_index).enable        = 'off';
+  rtwoptions(rtwoption_index).tooltip       = ['Specifies the additional libraries for ', ...
+                                                sprintf('\n'), 'linking against external timer source.'];
+
+  rtwoption_index = rtwoption_index + 1;
+  rtwoptions(rtwoption_index).prompt       = 'External timer prefix';
+  rtwoptions(rtwoption_index).type         = 'Edit';
+  rtwoptions(rtwoption_index).default       = '';
+  rtwoptions(rtwoption_index).tlcvariable  = 'ExternalTimerPrefix';
+  rtwoptions(rtwoption_index).makevariable = 'EXTERNAL_TIMER_PREFIX';
+  rtwoptions(rtwoption_index).enable        = 'off';
+  rtwoptions(rtwoption_index).tooltip       = ['Specifies the external timer prefix. timer funcions have', ...
+                                                sprintf('\n'), 'to look like "prefix_create" and "prefix_destroy".'];
+
+  %----------------------------------------%
+  % Configure RTW code generation settings %
+  %----------------------------------------%
+  
+  rtwgensettings.BuildDirSuffix = '_posix_rtw';
+  rtwgensettings.Version        = '1';
+  rtwgensettings.DerivedFrom    = 'grt.tlc';
+  rtwgensettings.SelectCallback = 'custom_select_callback_handler(hDlg, hSrc)';
+
+  END_RTW_OPTIONS 
+ %/
+%% The content between 'BEGIN_CONFIGSET_TARGET_COMPONENT' and 
+%% 'END_CONFIGSET_TARGET_COMPONENT' is for the MathWorks internal use
+%% only.  You must remove this section if you intend to use this file
+%% as a template for your own system target development.
+/%
+  BEGIN_CONFIGSET_TARGET_COMPONENT
+ 
+%  targetComponentClass = 'Simulink.GRTTargetCC';
+  
+  END_CONFIGSET_TARGET_COMPONENT
+ %/

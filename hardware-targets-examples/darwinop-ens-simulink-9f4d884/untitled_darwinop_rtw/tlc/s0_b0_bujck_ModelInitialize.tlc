@@ -1,0 +1,49 @@
+%implements s0_b0_bujck_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B0 = OpaqueTLCBlockFcn("Start", 0, 0, 0, 2)
+%assign tlcEnableFcnOfS0B0 = OpaqueTLCBlockFcn("Enable", 0, 0, 0, 2)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Body")>\
+%if !WHITE_SPACE(tlcStartFcnOfS0B0)
+/* Start for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Inport: '<Root>/In1'
+ *  Outport: '<Root>/Out1'
+ *  Outport: '<Root>/Out2'
+ *  Outport: '<Root>/Out3'
+ *  Outport: '<Root>/Out4'
+ *  Outport: '<Root>/Out5'
+ *  Outport: '<Root>/Out6'
+ */
+%<SLibCG_DumpSSCode("/*@[197a*/",tlcStartFcnOfS0B0,"/*@]*/")>\
+%endif
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Trailer")>\
+%if !WHITE_SPACE(tlcEnableFcnOfS0B0)
+/* Enable for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Inport: '<Root>/In1'
+ *  Outport: '<Root>/Out1'
+ *  Outport: '<Root>/Out2'
+ *  Outport: '<Root>/Out3'
+ *  Outport: '<Root>/Out4'
+ *  Outport: '<Root>/Out5'
+ *  Outport: '<Root>/Out6'
+ */
+%<SLibCG_DumpSSCode("/*@[1984*/",tlcEnableFcnOfS0B0,"/*@]*/")>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

@@ -1,0 +1,29 @@
+%% File    : sfun_usb_disconnect.tlc
+%%
+%% Abstract: Block for USB disconnection of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_usb_disconnect" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign input = LibBlockInputSignal(0, "", "", 0)
+
+    /* %<Type> Block: %<Name> */
+    if (%<input> == 1)
+    {
+        ecrobot_disconnect_usb();
+    }
+%endfunction %% Outputs

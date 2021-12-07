@@ -1,0 +1,976 @@
+Model {
+  Name			  "TestBluetoothRx"
+  Version		  6.4
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    1
+    Inport {
+      Name		      "In1"
+    }
+    NumRootOutports	    1
+    Outport {
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      Name		      "Out2"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.165"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "Shift_JIS"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  CloseFcn		  "rtwprivate ssgencode ModelCloseRequest TestBluetoot"
+"h"
+  Created		  "Sat Jan 27 20:40:31 2007"
+  Creator		  "tchikama"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "tchikama"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 26 15:13:34 2010"
+  ModelVersionFormat	  "1.%<AutoIncrement:165>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "ARM7"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "0.001"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  off
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  on
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  2
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  on
+	  DataBitsets		  on
+	  UseTempVars		  on
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection on
+	  EfficientFloat2IntCast  on
+	  OptimizeModelRefInitCode on
+	  LifeSpan		  "1"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "warning"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "warning"
+	  ReadBeforeWriteMsg	  "DisableAll"
+	  WriteAfterWriteMsg	  "DisableAll"
+	  WriteAfterReadMsg	  "DisableAll"
+	  AlgebraicLoopMsg	  "error"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "warning"
+	  TasksWithSamePriorityMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "error"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "error"
+	  UnconnectedOutputMsg	  "error"
+	  UnconnectedLineMsg	  "error"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "error"
+	  BusObjectLabelMismatch  "error"
+	  RootOutportRequireBusObject "error"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "warning"
+	  ModelReferenceVersionMismatchMessage "warning"
+	  ModelReferenceIOMismatchMessage "warning"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "Warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "ARM7"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "32-bit Generic"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Single"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "ert.tlc"
+	  GenCodeOnly		  on
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  off
+	  TemplateMakefile	  "ert_default_tmf"
+	  Description		  "Real-Time Workshop Embedded Coder (no auto "
+"configuration)"
+	  GenerateReport	  on
+	  SaveLog		  off
+	  RTWVerbose		  off
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  "ert_make_rtw_hook"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport on
+	  LaunchReport		  on
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Version		      "1.2.0"
+	      ForceParamTrailComments on
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      on
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "rt$N$M"
+	      CustomSymbolStrType     "$N$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      on
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.ERTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "GNU"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  off
+	      CombineOutputUpdateFcns on
+	      SuppressErrorStatus     on
+	      IncludeERTFirstTime     on
+	      ERTFirstTimeCompliant   on
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    on
+	      SupportAbsoluteTime     off
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      off
+	      SupportComplex	      off
+	      PurelyIntegerCode	      on
+	      SupportContinuousTime   off
+	      SupportNonInlinedSFcns  off
+	      GenerateErtSFunction    off
+	      GenerateASAP2	      off
+	      ExtMode		      off
+	      ExtModeTransport	      0
+	      ExtModeStaticAlloc      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTesting	      off
+	      ExtModeMexFile	      "ext_comm"
+	      InlinedParameterPlacement	"NonHierarchical"
+	      TargetOS		      "BareBoardExample"
+	      MultiInstanceErrorCode  "Error"
+	      RateGroupingCode	      on
+	      RootIOFormat	      "Structure reference"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      ERTSrcFileBannerTemplate "ert_code_template.cgt"
+	      ERTHdrFileBannerTemplate "ert_code_template.cgt"
+	      ERTDataSrcFileTemplate  "ert_code_template.cgt"
+	      ERTDataHdrFileTemplate  "ert_code_template.cgt"
+	      ERTCustomFileTemplate   "example_file_process.tlc"
+	      InitialValueSource      "Model"
+	      ModuleNamingRule	      "Unspecified"
+	      SignalDisplayLevel      10
+	      ParamTuneLevel	      10
+	      GlobalDataDefinition    "Auto"
+	      DataDefinitionFile      ""
+	      GlobalDataReference     "Auto"
+	      DataReferenceFile	      ""
+	      GRTInterface	      off
+	      EnableUserReplacementTypes off
+	      Array {
+		Type			"Struct"
+		Dimension		1
+		MATStruct {
+		  double		  ""
+		  single		  ""
+		  int32			  ""
+		  int16			  ""
+		  int8			  ""
+		  uint32		  ""
+		  uint16		  ""
+		  uint8			  ""
+		  boolean		  ""
+		  int			  ""
+		  uint			  ""
+		  char			  ""
+		}
+		PropName		"ReplacementTypes"
+	      }
+	      MemSecPackage	      "--- None ---"
+	      MemSecDataConstants     "Default"
+	      MemSecDataIO	      "Default"
+	      MemSecDataInternal      "Default"
+	      MemSecDataParameters    "Default"
+	      MemSecFuncInitTerm      "Default"
+	      MemSecFuncExecute	      "Default"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "MS UI Gothic"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DataStoreRead
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      IndexMode		      "One-based"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+      IndexIsStartValue	      off
+      OutputPortSize	      "1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "MS UI Gothic"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "MS UI Gothic"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "TestBluetoothRx"
+    Location		    [284, 158, 890, 668]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "In1"
+      Position		      [30, 173, 60, 187]
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bluetooth Rx\nInterface"
+      Ports		      [1]
+      Position		      [120, 140, 245, 220]
+      SourceBlock	      "ecrobot_nxt_lib/Bluetooth Rx\nInterface"
+      SourceType	      "Bluetooth Rx Interface"
+      ShowPortLabels	      on
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 1]
+      Position		      [305, 32, 310, 98]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "1"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Fcn1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ExpFcnCalls\nScheduler"
+      Ports		      [0, 1]
+      Position		      [120, 28, 245, 102]
+      Priority		      "1"
+      SourceBlock	      "ecrobot_nxt_lib/ExpFcnCalls Scheduler"
+      SourceType	      "Exported Function-Calls Scheduler"
+      fcname		      "'Fcn1'"
+      fctrigger		      "[100]"
+      ts		      "0.001"
+      platform		      "OSEK"
+      stacksize		      "[512]"
+      bd_mode		      "Slave"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Servo Motor\nInterface"
+      Ports		      [0, 1]
+      Position		      [375, 140, 500, 220]
+      SourceBlock	      "ecrobot_nxt_lib/Servo Motor\nInterface"
+      SourceType	      "Servo Motor Interface"
+      ShowPortLabels	      on
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ip		      "A"
+      mode		      "Brake"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "TestBTRx"
+      Ports		      [1]
+      Position		      [375, 27, 500, 103]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"TestBTRx"
+	Location		[634, 206, 1161, 430]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [70, 30, 100, 45]
+	  Orientation		  "down"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Function-Call\nSubsystem"
+	  Ports			  [0, 0, 0, 1]
+	  Position		  [35, 69, 135, 111]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Function-Call\nSubsystem"
+	    Location		    [452, 409, 1179, 676]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      TriggerPort
+	      Name		      "function"
+	      Ports		      []
+	      Position		      [20, 15, 40, 35]
+	      TriggerType	      "function-call"
+	      StatesWhenEnabling      "held"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bluetooth Rx\nRead"
+	      Ports		      [0, 1]
+	      Position		      [50, 90, 175, 170]
+	      SourceBlock	      "ecrobot_nxt_lib/Bluetooth Rx\nRead"
+	      SourceType	      "Bluetooth Rx Read"
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type Conversion"
+	      Position		      [420, 113, 495, 147]
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [320, 115, 350, 145]
+	      UpperLimit	      "100"
+	      LowerLimit	      "0"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector"
+	      Ports		      [1, 1]
+	      Position		      [215, 111, 255, 149]
+	      IndexMode		      "Zero-based"
+	      Elements		      "[0]"
+	      InputPortWidth	      "32"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Servo Motor\nWrite"
+	      Ports		      [1]
+	      Position		      [570, 90, 695, 170]
+	      SourceBlock	      "ecrobot_nxt_lib/Servo Motor\nWrite"
+	      SourceType	      "Servo Motor Write"
+	      ShowPortLabels	      "on"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      ip		      "A"
+	    }
+	    Line {
+	      SrcBlock		      "Bluetooth Rx\nRead"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Selector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Data Type Conversion"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data Type Conversion"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Servo Motor\nWrite"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Function-Call\nSubsystem"
+	  DstPort		  trigger
+	}
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Out2"
+      Position		      [560, 173, 590, 187]
+      IconDisplay	      "Port number"
+      BusOutputAsStruct	      off
+    }
+    Line {
+      SrcBlock		      "ExpFcnCalls\nScheduler"
+      SrcPort		      1
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Fcn1"
+      Labels		      [0, 0]
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "TestBTRx"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Servo Motor\nInterface"
+      SrcPort		      1
+      DstBlock		      "Out2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "In1"
+      SrcPort		      1
+      DstBlock		      "Bluetooth Rx\nInterface"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "nxtbuild('TestBTRx', 'build')"
+      Position		      [414, 380]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      DropShadow	      on
+      ClickFcn		      "nxtbuild('TestBTRx', 'build')"
+      UseDisplayTextAsClickCallback on
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "nxtbuild('TestBTRx', 'rxeflash')"
+      Position		      [409, 410]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      DropShadow	      on
+      ClickFcn		      "nxtbuild('TestBTRx', 'rxeflash')"
+      UseDisplayTextAsClickCallback on
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "nxtbuild('TestBTRx', 'cgen')"
+      Position		      [415, 327]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      DropShadow	      on
+      ClickFcn		      "nxtbuild('TestBTRx', 'cgen')"
+      UseDisplayTextAsClickCallback on
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "## Requires only standard MATLAB products ##"
+      Position		      [364, 270]
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      12
+    }
+    Annotation {
+      Name		      "## Requires additional 3rd party tools ##"
+      Position		      [344, 355]
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      12
+    }
+    Annotation {
+      Name		      "nxtconfig(gcs)"
+      Position		      [450, 297]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      DropShadow	      on
+      ClickFcn		      "nxtconfig(gcs)"
+      UseDisplayTextAsClickCallback on
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "BluetoothWrite('COM5')"
+      Position		      [424, 480]
+      BackgroundColor	      "[0.752941, 0.752941, 0.752941]"
+      DropShadow	      on
+      ClickFcn		      "BluetoothWrite('COM5')"
+      UseDisplayTextAsClickCallback on
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "## Requires a Bluetooth SPP device for PC ##\n "
+"     Bluetooth PIN CODE: MATLAB"
+      Position		      [232, 450]
+      HorizontalAlignment     "left"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      12
+    }
+  }
+}
+
+# Finite State Machines
+#
+#    Stateflow Version 6.4 (R2006a) dated Feb  2 2006, 05:30:12
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"TestBluetoothRx"
+		created              		"02-Feb-2007 15:27:18"
+		isLibrary            		0
+		firstTarget          		2
+		sfVersion            		64014000
+	}
+
+	target {
+		id                        		2
+		name                      		"sfun"
+		description               		"Default Simulink S-Function Target."
+		machine                   		1
+		linkNode                  		[1 0 0]
+	}
+}

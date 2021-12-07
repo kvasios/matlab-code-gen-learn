@@ -1,0 +1,29 @@
+%implements s0_b0_gcnck_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS0B1 = OpaqueTLCBlockFcn("Terminate", 0, 1, 0, 1)
+%assign tlcTerminateFcnOfS0B3 = OpaqueTLCBlockFcn("Terminate", 0, 3, 0, 1)
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B1)
+/* Terminate for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2d49*/",tlcTerminateFcnOfS0B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B3)
+/* Terminate for M-S-Function: '<Root>/Real-time simulation' */
+%<SLibCG_DumpSSCode("/*@[2d4c*/",tlcTerminateFcnOfS0B3,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

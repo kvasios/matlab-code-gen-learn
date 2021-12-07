@@ -1,0 +1,97 @@
+#------------------------ Macros read by make_rtw ------------------------------
+#
+# The following macros are read by the build procedure:
+#
+#  MAKECMD         - This is the command used to invoke the make utility
+#  HOST            - What platform this template makefile is targeted for
+#                    (i.e. PC or UNIX)
+#  BUILD           - Invoke make from the build procedure (yes/no)?
+#  SYS_TARGET_FILE - Name of system target file.
+
+MAKECMD         = |>MATLAB_BIN<|/|>ARCH<|/gmake
+HOST            = UNIX
+BUILD           = yes
+SYS_TARGET_FILE = darwinoplib.tlc
+COMPILER_TOOL_CHAIN = unix
+
+###############################################################
+#
+# Purpose: Makefile for "|>MODEL_NAME<|"
+#
+###############################################################
+
+TARGET = |>MODEL_NAME<|
+MAT_FILE = |>MAT_FILE<|
+EXT_MODE = |>EXT_MODE<|
+
+INCLUDE_DIRS = -I../../include -I../../../Framework/include -I../../project/instrumentation
+
+CXX = g++
+CC = gcc
+AR = ar
+
+ARFLAGS = cr
+CXXFLAGS += -O2 -DLINUX -DGLNX86 -Wall $(INCLUDE_DIRS) -pthread
+#CXXFLAGS += -O2 -DDEBUG -DLINUX -Wall $(INCLUDE_DIRS)
+LFLAGS += -lpthread -ljpeg -lrt
+LIBRARIES = webcam.a ../../lib/darwin.a
+
+SOURCES = $(wildcard *.cpp)
+# |>MODEL_MODULES<| |>MODEL_NAME<|.|>TARGET_LANG_EXT<|
+# |>MODEL_MODULES<| is sometimes buggy and omits some modules
+
+ifeq ($(MAT_FILE),1)
+MAT_SOURCES = rt_logging.c
+LIBRARIES += matfile.a
+endif
+
+ifeq ($(EXT_MODE),1)
+CXXFLAGS += -DEXT_MODE -DARGC_MAX=20 -DARGV_INIT={0} -DON_TARGET_WAIT_FOR_START=1
+INCLUDE_DIRS += -I.
+EXT_SOURCES = ext_svr.c ext_work.c rtiostream_interface.c rtiostream_utils.c rtiostream_tcpip.c updown.c rtw_modelmap_utils.c
+LIBRARIES += extmode.a
+endif
+
+OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
+MAT_OBJECTS = $(patsubst %.c,%.o,$(MAT_SOURCES))
+EXT_OBJECTS = $(patsubst %.c,%.o,$(EXT_SOURCES))
+
+all: $(TARGET)
+
+clean:
+	rm -f *.a *.o $(TARGET) core *~ *.so *.lo
+
+libclean:
+	make -C ../../build clean
+
+distclean: clean libclean
+
+../../lib/darwin.a:
+	make -C ../../build
+
+matfile.a: $(MAT_OBJECTS)
+	$(AR) $(ARFLAGS) $@ $(MAT_OBJECTS)
+
+extmode.a: $(EXT_OBJECTS)
+	$(AR) $(ARFLAGS) $@ $(EXT_OBJECTS)
+
+webcam.a: webcam.o task.o
+	$(AR) $(ARFLAGS) $@ webcam.o task.o
+
+webcam.o: ../../project/instrumentation/webcam.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+task.o: ../../project/instrumentation/task.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+%.o: %.c
+	$(CC) $(CXXFLAGS) -c -o $@ $<
+
+$(TARGET): $(LIBRARIES) $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LFLAGS) $(LIBRARIES) -o $(TARGET)
+	chmod 755 $(TARGET)
+
+# EOF: ert_darwinoplib.tmf

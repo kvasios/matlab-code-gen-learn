@@ -1,0 +1,26 @@
+%% File    : sfun_bt_rx.tlc
+%%
+%% Abstract: Block for Bluetooth Rx of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_bt_rx" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign outputAddr = LibBlockOutputSignalAddr(0, "", "", 0)
+
+  /* %<Type> Block: %<Name> */
+  ecrobot_read_bt_packet(%<outputAddr>, 32);
+%endfunction %% Outputs

@@ -1,0 +1,4322 @@
+Library {
+  Name			  "ecrobot_nxt_lib"
+  Version		  6.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "Shift_JIS"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Jul 24 12:57:16 2006"
+  Creator		  "tchikama"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "tchikama"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Nov 04 11:18:20 2010"
+  ModelVersionFormat	  "1.%<AutoIncrement:727>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+    }
+    Block {
+      BlockType		      DataStoreRead
+    }
+    Block {
+      BlockType		      DataStoreWrite
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "MS UI Gothic"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "MS UI Gothic"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ecrobot_nxt_lib"
+    Location		    [294, 93, 1575, 1065]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Acceleration Sensor\nInterface"
+      Ports		      [1]
+      Position		      [850, 265, 975, 345]
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Acceleration Sensor Interface"
+      MaskDescription	      "HiTechnic Acceleration Sensor Interface for LEG"
+"O Mindstorms NXT. \nInput is a vectorized signal:\n Index1: X axis accelerati"
+"on\n Index2: Y axis acceleration\n Index3: Z axis acceleration\nThis block sh"
+"ould be allocated outside of a Subsystem for RTW code generation."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('input', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Acceleration Sensor\nInterface"
+	Location		[552, 127, 998, 294]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [240, 54, 365, 86]
+	  FunctionName		  "sfun_acceleration_sensor"
+	  Parameters		  "0.001,0,ip,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [135, 55, 165, 85]
+	  UpperLimit		  "511"
+	  LowerLimit		  "-512"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Acceleration Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 266, 1110, 344]
+      FunctionName	      "sfun_acceleration_sensor"
+      Parameters	      "-1,1,ip,bd_mode"
+      MaskType		      "Acceleration Sensor Read"
+      MaskDescription	      "Read HiTechnic Acceleration Sensor data.\nOutpu"
+"t is a vectorized signal:\n Index1: X axis acceleration\n Index2: Y axis acce"
+"leration\n Index3: Z axis acceleration"
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('output', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "S1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Battery Voltage\nInterface"
+      Ports		      [1]
+      Position		      [305, 610, 430, 690]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'BatteryVoltage"
+"', 'Write', '');"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Battery Voltage Interface"
+      MaskDescription	      "Battery Voltage Interface for LEGO Mindstorms N"
+"XT.\nThis block should be allocated outside of a Subsystem for RTW code gener"
+"ation."
+      MaskInitialization      "[data, map]=imread('BATTERY_VOLTAGE.gif');\npic"
+"=ind2rgb(data,map);\n"
+      MaskDisplay	      "image(pic)\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Battery Voltage\nInterface"
+	Location		[22, 100, 468, 267]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 63, 95, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "BatteryVoltage"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [140, 55, 170, 85]
+	  UpperLimit		  "BatteryVoltage.Max"
+	  LowerLimit		  "BatteryVoltage.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Battery Voltage\nRead"
+      Ports		      [0, 1]
+      Position		      [440, 610, 565, 690]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'BatteryVoltage'"
+", 'Read', '');"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Battery Voltage Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Battery Voltage data."
+"\n"
+      MaskInitialization      "[data, map]=imread('BATTERY_VOLTAGE.gif');\npic"
+"=ind2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles')"
+";\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', 'Batter"
+"yVoltage_');\n"
+      MaskDisplay	      "image(pic)\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Battery Voltage\nRead"
+	Location		[50, 82, 496, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [130, 54, 260, 86]
+	  DataStoreName		  "BatteryVoltage"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "BatteryVoltage_"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "BatteryVoltage_"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Bluetooth Rx\nInterface"
+      Ports		      [1]
+      Position		      [575, 35, 700, 115]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Rx\nInterface"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Bluetooth Rx Interface"
+      MaskDescription	      "Bluetooth Receive Data Packet Interface for LEG"
+"O Mindstorms NXT.\nSize of Receive Data Packet is 32 and data type is uint8."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on and\nshould be used only single instance in a model."
+      MaskDisplay	      "image(imread('BLUETOOTH.jpg'))\nport_label('inp"
+"ut', 1, 'BTRx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Bluetooth Rx\nInterface"
+	Location		[576, 682, 1074, 982]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [40, 133, 70, 147]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [275, 125, 335, 155]
+	  FunctionName		  "sfun_bt_rx"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [170, 125, 200, 155]
+	  UpperLimit		  "255"
+	  LowerLimit		  "0"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Bluetooth Rx\nRead"
+      Ports		      [0, 1]
+      Position		      [715, 35, 840, 115]
+      FunctionName	      "sfun_bt_rx"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "Bluetooth Rx Read"
+      MaskDescription	      "Read LEGO Mindstorms Bluetooth data packet. Siz"
+"e of data packet is 32bytes.\nThis block should be used only single instance "
+"in a model."
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('BLUETOOTH.jpg'))\nport_label('out"
+"put', 1, 'BTRx')\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Bluetooth Tx\nInterface"
+      Ports		      [0, 1]
+      Position		      [575, 149, 700, 231]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Tx\nInterface"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Bluetooth Rx Interface"
+      MaskDescription	      "Bluetooth Send Data Packet Interface for LEGO M"
+"indstorms NXT.\nSize of Send Data Packet is 32 and data type is uint8.\nThis "
+"block should be allocated outside of a Subsystem for RTW code generation and"
+"\nshould be used only single instance in a model."
+      MaskDisplay	      "image(imread('BLUETOOTH.jpg'))\nport_label('out"
+"put', 1, 'BTTx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Bluetooth Tx\nInterface"
+	Location		[101, 133, 565, 433]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [0, 1]
+	  Position		  [85, 130, 145, 160]
+	  FunctionName		  "sfun_bt_tx"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [220, 130, 250, 160]
+	  UpperLimit		  "255"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 138, 370, 152]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Bluetooth Tx\nWrite"
+      Ports		      [1]
+      Position		      [715, 149, 840, 231]
+      FunctionName	      "sfun_bt_tx"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "Bluetooth Tx Write"
+      MaskDescription	      "Write LEGO Mindstorms Bluetooth data packet. Si"
+"ze of data packet is 32bytes.\nThis block should be used only single instance"
+" in a model."
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('BLUETOOTH.jpg'))\nport_label('inp"
+"ut', 1, 'BTTx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Color Sensor\nInterface"
+      Ports		      [1]
+      Position		      [850, 725, 975, 805]
+      AncestorBlock	      "ecrobot_nxt_lib/Infrared Sensor\nInterface"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Color Sensor Interface"
+      MaskDescription	      "HiTechnic Color Sensor Interface for LEGO Minds"
+"torms NXT. \nInput is a vectorized signal:\n Index1: Red color raw data\n Ind"
+"ex2: Green color raw data\n Index3: Blue color raw data\nThis block should be"
+" allocated outside of a Subsystem for RTW code generation."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskDisplay	      "image(imread('ColorSensor.jpeg'))\nport_label('"
+"input', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Color Sensor\nInterface"
+	Location		[552, 127, 998, 294]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [240, 54, 365, 86]
+	  FunctionName		  "sfun_color_sensor"
+	  Parameters		  "0.001,0,ip,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [135, 55, 165, 85]
+	  UpperLimit		  "1023"
+	  LowerLimit		  "0"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Color Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 726, 1110, 804]
+      AncestorBlock	      "ecrobot_nxt_lib/Infrared Sensor\nRead"
+      FunctionName	      "sfun_color_sensor"
+      Parameters	      "-1,1,ip,bd_mode"
+      MaskType		      "Color Sensor Read"
+      MaskDescription	      "Read HiTechnic Color Sensor data.\nOutput is a "
+"vectorized signal:\n Index1: Red color raw data\n Index2: Green color raw dat"
+"a\n Index3: Blue color raw data\n "
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('ColorSensor.jpeg'))\nport_label('"
+"output', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "S1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Compass Sensor\nInterface"
+      Ports		      [1]
+      Position		      [850, 495, 975, 575]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'CompassSensor'"
+", 'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Compass Sensor Interface"
+      MaskDescription	      "HiTechnic Compass Sensor Interface for LEGO Min"
+"dstorms NXT. \nThis block should be allocated outside of a Subsystem for RTW "
+"code generation. "
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Compass Sensor\nInterface"
+	Location		[913, 82, 1359, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "CompassSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [130, 55, 160, 85]
+	  UpperLimit		  "CompassSensorS1.Max"
+	  LowerLimit		  "CompassSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Compass Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 495, 1110, 575]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'CompassSensor',"
+" 'Read', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Compass Sensor Read"
+      MaskDescription	      "Read HiTechnic Compass Sensor data.\nThis block"
+" should be used only single instance in a model."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "L = get_param([gcb '/Data Store Read'], 'LineHa"
+"ndles');\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', "
+"['CompassSensor_' ip]);\n"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Compass Sensor\nRead"
+	Location		[114, 177, 560, 344]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [125, 54, 255, 86]
+	  DataStoreName		  "CompassSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "CompassSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "CompassSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Enter Button\nInterface"
+      Ports		      [1]
+      Position		      [305, 35, 430, 115]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'EnterButton', "
+"'Write', '');"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Enter Button Interface"
+      MaskDescription	      "Enter Button Interface for LEGO Mindstorms NXT."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on."
+      MaskDisplay	      "image(imread('ENTER_BUTTON.jpg'))\n\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Enter Button\nInterface"
+	Location		[22, 100, 468, 267]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 63, 95, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "EnterButton"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [140, 55, 170, 85]
+	  UpperLimit		  "EnterButton.Max"
+	  LowerLimit		  "EnterButton.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Enter Button\nRead"
+      Ports		      [0, 1]
+      Position		      [440, 35, 565, 115]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'EnterButton', '"
+"Read', '');"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Enter Button Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Enter Button status.\n"
+      MaskInitialization      "L = get_param([gcb '/Data Store Read'], 'LineHa"
+"ndles');\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', "
+"'EnterButton_');\n"
+      MaskDisplay	      "image(imread('ENTER_BUTTON.jpg'))\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Enter Button\nRead"
+	Location		[50, 82, 496, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [130, 54, 260, 86]
+	  DataStoreName		  "BatteryVoltage"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "EnterButton_"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "EnterButton_"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "ExpFcnCalls Scheduler"
+      Ports		      [0, 1]
+      Position		      [1120, 149, 1250, 231]
+      AncestorBlock	      "lib/ExpFcnCalls Scheduler"
+      InitFcn		      "set_fcncallname(gcb);"
+      FunctionName	      "sfun_expfcncallsscheduler"
+      Parameters	      "NUMBER_OF_FCNS, NUMBER_OF_TRIGS, TIMING_TABLE, "
+"ts"
+      MaskType		      "Exported Function-Calls Scheduler"
+      MaskDescription	      "This block generates Function-Call events accor"
+"ding to the specified initialization/periodical/event triggers in simulation."
+"\nThis block also generate apprepreate C source to schedule RTW-EC generated "
+"C Functions in the real NXT.\n'Platform',  'Task stack size', and 'Resource' "
+"parameters affect only RTW-EC code generation.\n\n-Function-Call name: specif"
+"y Function names \n-Function-Call source: specify the Function-Call sources. "
+"\n  0 = Initialization\n  Number of periodical samples = Periodical execution"
+" \n  -1 = External event triggered execution\n External event triggered exect"
+"ion is detected only at its rising edge in simulation.  \n External event tri"
+"ggered execution is not supported for target deployment.\n-Sample time[sec]: "
+"Fixed as 0.001\n-Platform: specify run-time platform in the real NXT.\n  OSEK"
+": TOPPERS/ATK(OSEK) is used as the platform for RTW-EC generated C functions "
+"in multi-tasking environment\n    JSP: TOPPERS/JSP(uITRON) is used as the pla"
+"tform for RTW-EC generated C functions in multi-tasking environment\n -Task s"
+"tack size[bytes]: specify each Task (Function-Call) stack size. \n-OSEK Resou"
+"rces: specify OSEK Resources\n-JSP Semaphores: specify JSP Semaphores\n-Bluet"
+"ooth device mode: specify Bluetooth device mode as Master/Slave.\n  'Slave' i"
+"s used for NXT-PC and NXT-NXT communications. 'Master' is used for only NXT-N"
+"XT communication.\n-Bluetooth device address: Slave device's Bluetooth device"
+" address to be paired with the Master device. Bluetooth device address consis"
+"ts of 7bytes hex data.  \n "
+      MaskPromptString	      "Function-Call name(i.e. 'Fcn', 'Fcn1', 'Fcn2'):"
+"|Function-Call source(i.e. [0 -1 10]):|Sample time[sec]:|Platform:|Task stack"
+" size(i.e. [512 512 512]):|OSEK Resource(i.e. 'resA', 'resB'): |JSP Semaphore"
+"(i.e. 'semA', 'semB'):|Bluetooth device mode:|Bluetooth device address(i.e. '"
+"00', '16', '53', '04', 'F1', 'B3', '00'):"
+      MaskStyleString	      "edit,edit,edit,popup(OSEK|JSP),edit,edit,edit,p"
+"opup(Master|Slave),edit"
+      MaskTunableValueString  "off,on,off,off,on,off,off,off,off"
+      MaskCallbackString      "|||if strcmp(get_param(gcb, 'platform'), 'OSEK'"
+")\n    if strcmp(get_param(gcb, 'bd_mode'), 'Master')\n        set_param(gcb,"
+" 'MaskEnableString', 'on,on,off,on,on,on,off,on,on')\n    else\n        set_p"
+"aram(gcb, 'MaskEnableString', 'on,on,off,on,on,on,off,on,off')\n    end\nelse"
+"if  strcmp(get_param(gcb, 'platform'), 'JSP')\n    if strcmp(get_param(gcb, '"
+"bd_mode'), 'Master')\n        set_param(gcb, 'MaskEnableString', 'on,on,off,o"
+"n,on,off,on,on,on')\n    else\n        set_param(gcb, 'MaskEnableString', 'on"
+",on,off,on,on,off,on,on,off')\n    end\nend\n||||if strcmp(get_param(gcb, 'pl"
+"atform'), 'OSEK')\n    if strcmp(get_param(gcb, 'bd_mode'), 'Master')\n      "
+"  set_param(gcb, 'MaskEnableString', 'on,on,off,on,on,on,off,on,on')\n    els"
+"e\n        set_param(gcb, 'MaskEnableString', 'on,on,off,on,on,on,off,on,off'"
+")\n    end\nelseif  strcmp(get_param(gcb, 'platform'), 'JSP')\n    if strcmp("
+"get_param(gcb, 'bd_mode'), 'Master')\n        set_param(gcb, 'MaskEnableStrin"
+"g', 'on,on,off,on,on,off,on,on,on')\n    else\n        set_param(gcb, 'MaskEn"
+"ableString', 'on,on,off,on,on,off,on,on,off')\n    end\nend|"
+      MaskEnableString	      "on,on,off,on,on,on,off,on,off"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,"
+      MaskVariables	      "fcname=&1;fctrigger=@2;ts=@3;platform=&4;stacks"
+"ize=@5;resources=&6;semaphores=&7;bd_mode=&8;bd_addr=&9;"
+      MaskInitialization      "fcname = eval(['{' fcname '}']);\nif length(fcn"
+"ame) ~= length(fctrigger)\n    error('Function-Call name list and Function-Ca"
+"ll source list are unmatch.');\nend\n\n% S-Function Parameters\nNUMBER_OF_FCN"
+"S = length(fcname);\nNUMBER_OF_TRIGS = length(find(fctrigger == -1));\nTIMING"
+"_TABLE = fctrigger;\n\n% diplay Function-Call configurations on the block\nif"
+" strcmp(platform, 'OSEK')\n    txt = '###   OSEK Tasks   ###';\nelseif strcmp"
+"(platform, 'JSP')\n    txt = '###   JSP Tasks   ###';\nend\n\nif strcmp('auto"
+"', simget(bdroot, 'FixedStep'))\n    error('Exported Function-Calls Scheduler"
+" block requires FixdStep with explicit sample time');\nelse\n    trig_i = 1;"
+"\n    for i = 1:length(fcname)\n        if fctrigger(i) == 0\n            txt"
+" = [txt '\\n' fcname{i} ': Init'];\n        elseif fctrigger(i) == -1\n      "
+"      txt = [txt '\\n' fcname{i} ': Trigger(' num2str(trig_i) ')'];\n        "
+"    trig_i = trig_i+1;\n        elseif fctrigger(i) > 0\n            txt = [t"
+"xt '\\n' fcname{i} ': ' num2str(fctrigger(i)*ts) ' [sec]'];\n        end\n   "
+" end\nend\n\nif strcmp(bd_mode, 'Master')\n    bd_addr = eval(['{' bd_addr '}"
+"']);\n    if length(bd_addr) ~= 7\n        error('Bluetooth device address sh"
+"ould consist of 7 bytes hex data.');\n    end\n\n    for i = 1:7\n        if "
+"length(bd_addr{i}) ~= 2\n            error('Each Bluetooth device address dat"
+"a should consist of 1 byte hex data.');\n        end\n        ch = bd_addr{i}"
+";\n        for j = 1:2\n            if  ~((double('0') <= double(upper(ch(j))"
+") && double(upper(ch(j))) <= double('9')) || (double('A') <= double(upper(ch("
+"j))) && double(upper(ch(j))) <= double('Z')))\n                error('Bluetoo"
+"th device address data contains invalid hex data expression.');\n            "
+"end\n        end\n    end\nend\n\n"
+      MaskDisplay	      "disp(txt)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "' '|[0]|0.001|OSEK|[512]|||Slave|"
+      MaskTabNameString	      ",,,,,,,,"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Gyro Sensor\nInterface"
+      Ports		      [1]
+      Position		      [850, 380, 975, 460]
+      AncestorBlock	      "ecrobot_nxt_lib/Light Sensor\nInterface"
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'GyroSensor', '"
+"Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Gyro Sensor Interface"
+      MaskDescription	      "HiTechnic Gyro Sensor Interface for LEGO Mindst"
+"orms NXT. \nThis block should be allocated outside of a Subsystem for RTW cod"
+"e generation. "
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Gyro Sensor\nInterface"
+	Location		[913, 82, 1359, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "GyroSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [130, 55, 160, 85]
+	  UpperLimit		  "GyroSensorS1.Max"
+	  LowerLimit		  "GyroSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Gyro Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 380, 1110, 460]
+      AncestorBlock	      "ecrobot_nxt_lib/Light Sensor\nRead"
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'GyroSensor', 'R"
+"ead', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Gyro Sensor Read"
+      MaskDescription	      "Read HiTechnic Gyro Sensor data.\nThis block sh"
+"ould be used only single instance in a model."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "L = get_param([gcb '/Data Store Read'], 'LineHa"
+"ndles');\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', "
+"['GyroSensor_' ip]);\n"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Gyro Sensor\nRead"
+	Location		[114, 177, 560, 344]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [125, 54, 255, 86]
+	  DataStoreName		  "LightSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "GyroSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "GyroSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "IR Seeker\nInterface"
+      Ports		      [1]
+      Position		      [850, 610, 975, 690]
+      AncestorBlock	      "ecrobot_nxt_lib/Acceleration Sensor\nInterface"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "IR Seeker Interface"
+      MaskDescription	      "HiTechnic IR Seeker Interface for LEGO Mindstor"
+"ms NXT. \nInput is a vectorized signal:\n Index1: Direction\n Index2: Intensi"
+"ty1\n Index3: Intensity2\n Index4: Intensity3\n Index5: Intensity4\n Index6: "
+"Intensity5\nThis block should be allocated outside of a Subsystem for RTW cod"
+"e generation."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('input', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"IR Seeker\nInterface"
+	Location		[552, 127, 998, 294]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [240, 54, 365, 86]
+	  FunctionName		  "sfun_ir_seeker"
+	  Parameters		  "0.001,0,ip,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [135, 55, 165, 85]
+	  UpperLimit		  "127"
+	  LowerLimit		  "-128"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "IR Seeker\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 611, 1110, 689]
+      AncestorBlock	      "ecrobot_nxt_lib/Acceleration Sensor\nRead"
+      FunctionName	      "sfun_ir_seeker"
+      Parameters	      "-1,1,ip,bd_mode"
+      MaskType		      "IR Seeker Read"
+      MaskDescription	      "Read HiTechnic IR Seeker data.\nOutput is a vec"
+"torized signal:\n Index1: Direction\n Index2: Intensity1\n Index3: Intensity2"
+"\n Index4: Intensity3\n Index5: Intensity4\n Index6: Intensity5\n"
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('HiTechnicSensor.jpg'))\nport_labe"
+"l('output', 1, ['S' num2str(ip)])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "S1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "JSP Semaphore"
+      Ports		      []
+      Position		      [1120, 320, 1247, 359]
+      AncestorBlock	      "ecrobot_nxt_lib/OSEK Resource"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "JSP Semaphore block"
+      MaskDescription	      "One of JSP Semaphore which are specified in the"
+" Exported Function-Calls Scheduler block could be configured. Note that this "
+"block does not affect simulation, but code generation."
+      MaskPromptString	      "Semaphore:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskCallbackString      "\n"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "semaphore=&1;"
+      MaskInitialization      "semaphore = get_param(gcb, 'semaphore');\n\n% c"
+"heck the specified semaphore is defined in the Exported Function-Calls Schedu"
+"ler block\nblk = find_system(bdroot, 'regexp', 'on', ...\n    'BlockType', 'S"
+"-Function', ...\n    'MaskType', 'Exported Function-Calls Scheduler');\nif ~i"
+"sempty(blk)\n    semaphores = get_param(blk, 'semaphores');\n    semaphores ="
+" eval([ '{' semaphores{1} '}']);\n    if ~ismember(semaphore, semaphores)\n  "
+"      error(['JSP Semaphore: ' semaphore ' is not defined in the Exported Fun"
+"ction-Calls Scheduler block']);\n    end\nend\n\n% write wai_sem/sig_sem API "
+"into RTW Custom Outputs and Update Code blocks\nRTWdataOutputs = get_param([g"
+"cb '/System Outputs'], 'RTWdata');\nRTWdataUpdate = get_param([gcb '/System U"
+"pdate'], 'RTWdata');\nLINE_FEED = sprintf('\\n');\nif ~strcmp(semaphore, '<em"
+"pty>')\n    % write wai_sem into System Outputs Execution code\n    RTWdataOu"
+"tputs.Middle = [LINE_FEED '#ifdef JSP' LINE_FEED 'wai_sem( ' semaphore ' );' "
+"LINE_FEED '#endif' LINE_FEED];\n    % write sig_sem into System Update Exit c"
+"ode\n    RTWdataUpdate.Bottom =  [LINE_FEED '#ifdef JSP' LINE_FEED 'sig_sem( "
+"' semaphore ' );' LINE_FEED '#endif' LINE_FEED];\nelse\n    RTWdataOutputs.Mi"
+"ddle = [LINE_FEED '#ifdef JSP' LINE_FEED LINE_FEED '#endif' LINE_FEED];\n    "
+"RTWdataUpdate.Bottom =  [LINE_FEED '#ifdef JSP' LINE_FEED LINE_FEED '#endif' "
+"LINE_FEED];\nend\nset_param([gcb '/System Outputs'], 'RTWdata', RTWdataOutput"
+"s);\nset_param([gcb '/System Update'], 'RTWdata', RTWdataUpdate);"
+      MaskDisplay	      "disp(['Semaphore:\\n' semaphore])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"JSP Semaphore"
+	Location		[549, 166, 890, 300]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "System Outputs"
+	  Ports			  []
+	  Position		  [35, 36, 119, 81]
+	  BackgroundColor	  "magenta"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    TLCFile		    "custcode"
+	    Location		    "System Outputs Function"
+	    Middle		    "\n#ifdef LEJOS_OSEK\nGetResource( A );\n#"
+"endif\n"
+	  }
+	  CopyFcn		  "%cccopyfcn(gcb)"
+	  OpenFcn		  "%ccopenfcn('System Outputs Function')"
+	  FontName		  "Times New Roman"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "System Outputs"
+	  MaskDescription	  "Add code to a systems Outputs function"
+	  MaskHelp		  "This block contains text fields to insert c"
+"ustom user code sections at the declaration, execution and exit sections of t"
+"he systems outputs function.  By placing this block inside a subsytem, the cu"
+"stom user code will appear in that subsystems function."
+	  MaskPromptString	  "Mask Parameter 1:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "off"
+	  MaskVisibilityString	  "off"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "ShowInLibBrowser=@1;"
+	  MaskDisplay		  "disp('System\\nOutputs');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "System Outputs"
+	    Location		    [662, 399, 817, 537]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "System Update"
+	  Ports			  []
+	  Position		  [145, 36, 229, 81]
+	  BackgroundColor	  "magenta"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    TLCFile		    "custcode"
+	    Location		    "System Outputs Function"
+	    Middle		    " "
+	    Bottom		    "\n#ifdef LEJOS_OSEK\nReleaseResource( A )"
+";\n#endif\n"
+	  }
+	  CopyFcn		  "%cccopyfcn(gcb)"
+	  OpenFcn		  "%ccopenfcn('System Update Function')"
+	  FontName		  "Times New Roman"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "System Update"
+	  MaskDescription	  "Add code to a systems Update function"
+	  MaskHelp		  "This block contains text fields to insert c"
+"ustom user code sections at the declaration, execution and exit sections of t"
+"he systems update function.  By placing this block inside a subsytem, the cus"
+"tom user code will appear in that subsystems function."
+	  MaskPromptString	  "Mask Parameter 1:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "off"
+	  MaskVisibilityString	  "off"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "ShowInLibBrowser=@1;"
+	  MaskDisplay		  "disp('System\\nUpdate');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "System Update"
+	    Location		    [662, 399, 806, 531]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LCD Variables Monitor"
+      Ports		      [1]
+      Position		      [575, 378, 700, 462]
+      FunctionName	      "sfun_lcd_var_monitor"
+      MaskType		      "LCD Variables Monitor"
+      MaskDescription	      "Display sixteen input signed integer (int32) va"
+"riables on the NXT LCD.\nInputs signals are displayed as the following format"
+" in the LCD.\n\nInput01  Input02\nInput03  Input04\nInput05  Input06\nInput07"
+"  Input08\nInput09  Input10\nInput11  Input12\nInput13  Input14\nInput15  Inp"
+"ut16\n\nNOTE: The fastest LCD refresh rate is appx. 24[msec]. So this block i"
+"s recommended to be placed in a Function-Call Task Subsystem which is execute"
+"d longer than 24[msec] period (e.g. 50[msec])\nNOTE: This block overrides exi"
+"sting LCD display feature of Embedded Coder Robot NXT.\nNOTE: This block shou"
+"ld be used only single instance in a model.  \n\n\n\n"
+      MaskDisplay	      "image(imread('nxtlcd.jpg'))\n\n    \n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Light Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 35, 160, 115]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'LightSensor', "
+"'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Light Sensor Interface"
+      MaskDescription	      "Light Sensor Interface for LEGO Mindstorms NXT."
+" \nThis block should be allocated outside of a Subsystem for RTW code generat"
+"ion. "
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('LIGHT_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Light Sensor\nInterface"
+	Location		[913, 74, 1359, 241]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "LightSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [130, 55, 160, 85]
+	  UpperLimit		  "LightSensorS1.Max"
+	  LowerLimit		  "LightSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Light Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 35, 295, 115]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'LightSensor', '"
+"Read', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Light Sensor Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Light Sensor data."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('LIGHT_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles');\n"
+"name = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', ['LightSen"
+"sor_' ip]);\n"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Light Sensor\nRead"
+	Location		[114, 177, 560, 344]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [125, 54, 255, 86]
+	  DataStoreName		  "LightSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "LightSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "LightSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "NXT Color Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 495, 160, 575]
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "NXTColor Sensor Interface"
+      MaskDescription	      "NXT Color Sensor Interface for LEGO Mindstorms "
+"NXT. \nInput is varied depending on the Sensor mode.\nLIGHTSENSOR_NONE: Light"
+" sensor with no LED light\nLIGHTSENSOR_RED: Light sensor with red LED light\n"
+"LIGHTSENSOR_GREEN: Light sensor with green LED light\nLIGHTSENSOR_BLUE: Light"
+" sensor with blue LED light\nLIGHTSENSOR_FULL: Light sensor with full (red, g"
+"reen and blue) LED lights\nCOLORSENSOR_ID: Color sensor returns pre-defined c"
+"olor ID data\n(0=black, 1= blue, 2=green, 3=yellow, 4=orange, 5=red, 6=white,"
+" 99=unknown color)\nNote that the color ID might be unmatch depending on meas"
+"urement conditions.\nCOLORSENSOR_RGB: Color sensor returns RGB data\n\nThis b"
+"lock should be allocated outside of a Subsystem for RTW code generation."
+      MaskPromptString	      "Port:|Sensor mode:"
+      MaskStyleString	      "popup(S1|S2|S3|S4),popup(LIGHTSENSOR_NONE|LIGHT"
+"SENSOR_RED|LIGHTSENSOR_GREEN|LIGHTSENSOR_BLUE|LIGHTSENSOR_FULL|COLORSENSOR_ID"
+"|COLORSENSOR_RGB)"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "ip=@1;sensor_mode=@2;"
+      MaskInitialization      "switch(sensor_mode)\n    case 1\n        sensor"
+"_mode_str = 'LIGHTSENSOR_NONE';\n    case 2\n        sensor_mode_str = 'LIGHT"
+"SENSOR_RED';\n    case 3\n        sensor_mode_str = 'LIGHTSENSOR_GREEN';\n   "
+" case 4\n        sensor_mode_str = 'LIGHTSENSOR_BLUE';\n    case 5\n        s"
+"ensor_mode_str = 'LIGHTSENSOR_FULL';\n    case 6\n        sensor_mode_str = '"
+"COLORSENSOR_ID';\n    case 7\n        sensor_mode_str = 'COLORSENSOR_RGB';\n "
+"   otherwise\n        sensor_mode_str = '';\nend\n        "
+      MaskDisplay	      "image(imread('cs9694.jpg'))\nport_label('input'"
+", 1, ['S' num2str(ip)])\ntext(5,5,sensor_mode_str)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1|COLORSENSOR_RGB"
+      MaskTabNameString	      ","
+      System {
+	Name			"NXT Color Sensor\nInterface"
+	Location		[552, 127, 998, 294]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [240, 54, 365, 86]
+	  FunctionName		  "sfun_nxtcolor_sensor"
+	  Parameters		  "0.001,0,ip,bd_mode,sensor_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [135, 55, 165, 85]
+	  UpperLimit		  "1023"
+	  LowerLimit		  "0"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NXT Color Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 496, 295, 574]
+      FunctionName	      "sfun_nxtcolor_sensor"
+      Parameters	      "-1,1,ip,bd_mode,sensor_mode"
+      MaskType		      "NXTColor Sensor Read"
+      MaskDescription	      "NXT Color Sensor Interface for LEGO Mindstorms "
+"NXT.\n Output is varied depending on the Sensor mode.\nLIGHTSENSOR_NONE: Ligh"
+"t sensor with no LED light\nLIGHTSENSOR_RED: Light sensor with red LED light"
+"\nLIGHTSENSOR_GREEN: Light sensor with green LED light\nLIGHTSENSOR_BLUE: Lig"
+"ht sensor with blue LED light\nLIGHTSENSOR_FULL: Light sensor with full (red,"
+" green and blue) LED lights\nCOLORSENSOR_ID: Color sensor returns pre-defined"
+" color ID data\n(0=black, 1= blue, 2=green, 3=yellow, 4=orange, 5=red, 6=whit"
+"e, 99=unknown color)\nNote that the color ID might be unmatch depending on me"
+"asurement conditions.\nCOLORSENSOR_RGB: Color sensor returns RGB data\n\nThis"
+" block should be allocated outside of a Subsystem for RTW code generation."
+      MaskPromptString	      "Port:|Sensor mode:"
+      MaskStyleString	      "popup(S1|S2|S3|S4),popup(LIGHTSENSOR_NONE|LIGHT"
+"SENSOR_RED|LIGHTSENSOR_GREEN|LIGHTSENSOR_BLUE|LIGHTSENSOR_FULL|COLORSENSOR_ID"
+"|COLORSENSOR_RGB)"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "ip=@1;sensor_mode=@2;"
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);\nswitch("
+"sensor_mode)\n    case 1\n        sensor_mode_str = 'LIGHTSENSOR_NONE';\n    "
+"case 2\n        sensor_mode_str = 'LIGHTSENSOR_RED';\n    case 3\n        sen"
+"sor_mode_str = 'LIGHTSENSOR_GREEN';\n    case 4\n        sensor_mode_str = 'L"
+"IGHTSENSOR_BLUE';\n    case 5\n        sensor_mode_str = 'LIGHTSENSOR_FULL';"
+"\n    case 6\n        sensor_mode_str = 'COLORSENSOR_ID';\n    case 7\n      "
+"  sensor_mode_str = 'COLORSENSOR_RGB';\n    otherwise\n        sensor_mode_st"
+"r = '';\nend\n        "
+      MaskDisplay	      "image(imread('cs9694.jpg'))\nport_label('output"
+"', 1, ['S' num2str(ip)])\ntext(5,5,sensor_mode_str)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1|COLORSENSOR_RGB"
+      MaskTabNameString	      ","
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NXT GamePad\nData Logger"
+      Ports		      [2]
+      Position		      [715, 378, 840, 462]
+      FunctionName	      "sfun_gamepad_datalogger"
+      Parameters	      "1"
+      MaskType		      "NXT GamePad Data Logger"
+      MaskDescription	      "Send NXT internal status to NXT GamePad Data Lo"
+"gger.\nNXT GamePad Data Logger has a total 32 bytes data packet.\n\nNORMAL MO"
+"DE:\ndata packet 0-3bytes: system tick in msec, data type U32 \ndata packet 4"
+"bytes: Data1, data type S8 \ndata packet 5bytes: Data2, data type S8 \ndata p"
+"acket 6-7bytes: battery voltage in mV, data type U16\ndata packet 8-11bytes: "
+"Servo Motor revolution at Port A, data type S32 \ndata packet 12-15bytes: Ser"
+"vo Motor revolution at Port B, data type S32 \ndata packet 16-19bytes: Servo "
+"Motor revolution at Port C, data type S32 \ndata packet 20-21bytes: Analog Se"
+"nsor value at Port S1, data type S16 \ndata packet 22-23bytes: Analog Sensor "
+"value at Port S2, data type S16\ndata packet 24-25bytes: Analog Sensor value "
+"at Port S3, data type S16\ndata packet 26-27bytes: Analog Sensor value at Por"
+"t S4, data type S16\ndata packet 28-31bytes: I2C Sensor value, data type S32"
+"\n\nData1 and Data2 can be used for logging user selected data.\nThe logged d"
+"ata by NXT GamePad is saved as a CSV file.\n\nNOTE: This block should not be "
+"used with Bluetooth Tx Interface/Write blocks in a model and\nshould be used "
+"only single instance in a model.  \n\n\n"
+      MaskDisplay	      "image(imread('AnalogGamePad.jpg'))\nport_label("
+"'input', 1, 'Data1')\nport_label('input', 2, 'Data2')\n\n    \n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NXT GamePad \nADC Data Logger"
+      Ports		      [6]
+      Position		      [600, 494, 840, 641]
+      FunctionName	      "sfun_gamepad_datalogger"
+      Parameters	      "2"
+      MaskType		      "NXT GamePad ADC Data Logger"
+      MaskDescription	      "Send NXT internal status to NXT GamePad Data Lo"
+"gger.\nNXT GamePad Data Logger has a total 32 bytes data packet.\n\ndata pack"
+"et 0-3bytes: system tick in msec, data type U32 \ndata packet 4bytes: Data1, "
+"data type S8 \ndata packet 5bytes: Data2, data type S8 \ndata packet 6-7bytes"
+": battery voltage in mV, data type U16\ndata packet 8-11bytes: Servo Motor re"
+"volution at Port A, data type S32 \ndata packet 12-15bytes: Servo Motor revol"
+"ution at Port B, data type S32 \ndata packet 16-19bytes: Servo Motor revoluti"
+"on at Port C, data type S32 \ndata packet 20-21bytes: ADC1, data type S16 \nd"
+"ata packet 22-23bytes: ADC2, data type S16\ndata packet 24-25bytes: ADC3, dat"
+"a type S16\ndata packet 26-27bytes: ADC4, data type S16\ndata packet 28-31byt"
+"es: I2C Sensor value, data type S32\n\nData1, Data2, ADC1, ADC2, ADC3, and AD"
+"C4 can be used for logging user selected data.\nThe logged data by NXT GamePa"
+"d is saved as a CSV file.\n\nNOTE: This block should not be used with Bluetoo"
+"th Tx Interface/Write blocks in a model and\nshould be used only single insta"
+"nce in a model.  \n\n\n"
+      MaskDisplay	      "image(imread('AnalogGamePad.jpg'))\nport_label("
+"'input', 1, 'Data1')\nport_label('input', 2, 'Data2')\nport_label('input', 3,"
+" 'ADC1')\nport_label('input', 4, 'ADC2')\nport_label('input', 5, 'ADC3')\npor"
+"t_label('input', 6, 'ADC4')\n\n    \n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OSEK Resource"
+      Ports		      []
+      Position		      [1120, 265, 1247, 304]
+      AncestorBlock	      "lib/OSEK Resource"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "OSEK Resource block"
+      MaskDescription	      "One of OSEK Resources which are specified in th"
+"e Exported Function-Calls Scheduler block could be configured. Note that this"
+" block does not affect simulation, but code generation."
+      MaskPromptString	      "Resource:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskCallbackString      "\n"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "resource=&1;"
+      MaskInitialization      "resource = get_param(gcb, 'resource');\n\n% che"
+"ck the specified resource is defined in the Exported Function-Calls Scheduler"
+" block\nblk = find_system(bdroot, 'regexp', 'on', ...\n    'BlockType', 'S-Fu"
+"nction', ...\n    'MaskType', 'Exported Function-Calls Scheduler');\nif ~isem"
+"pty(blk)\n    resources = get_param(blk, 'resources');\n    resources = eval("
+"[ '{' resources{1} '}']);\n    if ~ismember(resource, resources)\n        err"
+"or(['OSEK Resource: ' resource ' is not defined in the Exported Function-Call"
+"s Scheduler block']);\n    end\nend\n\n% write Get/SetResource API into RTW C"
+"ustom Outputs and Update Code blocks\nRTWdataOutputs = get_param([gcb '/Syste"
+"m Outputs'], 'RTWdata');\nRTWdataUpdate = get_param([gcb '/System Update'], '"
+"RTWdata');\nLINE_FEED = sprintf('\\n');\n%resource = get_param(gcb, 'resource"
+"');\nif ~strcmp(resource, '<empty>')\n    % write GetResouce into System Outp"
+"uts Execution code\n    RTWdataOutputs.Middle = [LINE_FEED '#ifdef OSEK' LINE"
+"_FEED 'GetResource( ' resource ' );' LINE_FEED '#endif' LINE_FEED];\n    % wr"
+"ite ReleaseResource into System Update Exit code\n    RTWdataUpdate.Bottom = "
+" [LINE_FEED '#ifdef OSEK' LINE_FEED 'ReleaseResource( ' resource ' );' LINE_F"
+"EED '#endif' LINE_FEED];\nelse\n    RTWdataOutputs.Middle = [LINE_FEED '#ifde"
+"f OSEK' LINE_FEED LINE_FEED '#endif' LINE_FEED];\n    RTWdataUpdate.Bottom = "
+" [LINE_FEED '#ifdef OSEK' LINE_FEED LINE_FEED '#endif' LINE_FEED];\nend\nset_"
+"param([gcb '/System Outputs'], 'RTWdata', RTWdataOutputs);\nset_param([gcb '/"
+"System Update'], 'RTWdata', RTWdataUpdate);\n\n"
+      MaskDisplay	      "disp(['Resource:\\n' resource])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OSEK Resource"
+	Location		[549, 166, 890, 300]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "System Outputs"
+	  Ports			  []
+	  Position		  [35, 36, 119, 81]
+	  BackgroundColor	  "magenta"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    TLCFile		    "custcode"
+	    Location		    "System Outputs Function"
+	    Middle		    "\n#ifdef LEJOS_OSEK\nGetResource( A );\n#"
+"endif\n"
+	  }
+	  CopyFcn		  "%cccopyfcn(gcb)"
+	  OpenFcn		  "%ccopenfcn('System Outputs Function')"
+	  FontName		  "Times New Roman"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "System Outputs"
+	  MaskDescription	  "Add code to a systems Outputs function"
+	  MaskHelp		  "This block contains text fields to insert c"
+"ustom user code sections at the declaration, execution and exit sections of t"
+"he systems outputs function.  By placing this block inside a subsytem, the cu"
+"stom user code will appear in that subsystems function."
+	  MaskPromptString	  "Mask Parameter 1:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "off"
+	  MaskVisibilityString	  "off"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "ShowInLibBrowser=@1;"
+	  MaskDisplay		  "disp('System\\nOutputs');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "System Outputs"
+	    Location		    [662, 399, 817, 537]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "System Update"
+	  Ports			  []
+	  Position		  [145, 36, 229, 81]
+	  BackgroundColor	  "magenta"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    TLCFile		    "custcode"
+	    Location		    "System Outputs Function"
+	    Middle		    " "
+	    Bottom		    "\n#ifdef LEJOS_OSEK\nReleaseResource( A )"
+";\n#endif\n"
+	  }
+	  CopyFcn		  "%cccopyfcn(gcb)"
+	  OpenFcn		  "%ccopenfcn('System Update Function')"
+	  FontName		  "Times New Roman"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "System Update"
+	  MaskDescription	  "Add code to a systems Update function"
+	  MaskHelp		  "This block contains text fields to insert c"
+"ustom user code sections at the declaration, execution and exit sections of t"
+"he systems update function.  By placing this block inside a subsytem, the cus"
+"tom user code will appear in that subsystems function."
+	  MaskPromptString	  "Mask Parameter 1:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "off"
+	  MaskVisibilityString	  "off"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "ShowInLibBrowser=@1;"
+	  MaskDisplay		  "disp('System\\nUpdate');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "System Update"
+	    Location		    [662, 399, 806, 531]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Prototype Sensor\nInterface"
+      Ports		      [2]
+      Position		      [850, 840, 975, 920]
+      AncestorBlock	      "ecrobot_nxt_lib/Acceleration Sensor\nInterface"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Prototype Sensor Interface"
+      MaskDescription	      "HiTechnic Prototype Sensor Interface for LEGO M"
+"indstorms NXT. \nInputs are vectorized signals.\nA: Analog 5 inputs (0 - 1023"
+")\nD: Digital 6 inputs (0/1)\nThis block should be allocated outside of a Sub"
+"system for RTW code generation."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=@1;"
+      MaskDisplay	      "image(imread('t_Solderless-proto2.jpg'))\nport_"
+"label('input', 1, ['A' '(S' num2str(ip) ')'])\nport_label('input', 2, ['D' '("
+"S' num2str(ip) ')'])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Prototype Sensor\nInterface"
+	Location		[552, 127, 998, 294]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [50, 63, 80, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  Position		  [50, 113, 80, 127]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [2]
+	  Position		  [240, 44, 365, 146]
+	  FunctionName		  "sfun_prototype_sensor"
+	  Parameters		  "0.001,0,ip,bd_mode,4"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [135, 55, 165, 85]
+	  UpperLimit		  "1023"
+	  LowerLimit		  "0"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Prototype Sensor\nRead"
+      Ports		      [0, 2]
+      Position		      [985, 841, 1110, 919]
+      FunctionName	      "sfun_prototype_sensor"
+      Parameters	      "-1,1,ip,bd_mode,sensor_sample_time"
+      MaskType		      "Prototype Sensor Read"
+      MaskDescription	      "Read HiTechnic Prototype Sensor data.\nOutputs "
+"are vectorized signals:\nA: Analog 5 inputs (0 - 1023)\nD: Digital 6 inputs ("
+"0/1)"
+      MaskPromptString	      "Port:|Sensor Sample Time (4-100[msec])"
+      MaskStyleString	      "popup(S1|S2|S3|S4),edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "ip=@1;sensor_sample_time=@2;"
+      MaskInitialization      "if sensor_sample_time < 4 || sensor_sample_time"
+" > 100\n    error (['Error in ' gcb ': Sensor Sample Time should be wihtin 4 "
+"- 100 [msec].']);\nend\n\nbd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('t_Solderless-proto2.jpg'))\nport_"
+"label('output', 1, ['A' '(S' num2str(ip) ')'])\nport_label('output', 2, ['D' "
+"'(S' num2str(ip) ')'])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "S1|10"
+      MaskTabNameString	      ","
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Revolution Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 610, 160, 690]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'RevolutionSens"
+"or', 'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Revolution Sensor Interface"
+      MaskDescription	      "Motor Revolution Sensor Interface for LEGO Mind"
+"storms NXT.\nThis block should be allocated outside of a Subsystem for RTW co"
+"de generation."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(A|B|C)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('ROTATION_SENSOR.gif');\npic"
+"=ind2rgb(data,map);\n\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "A"
+      System {
+	Name			"Revolution Sensor\nInterface"
+	Location		[-10, 95, 436, 262]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [70, 63, 100, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [250, 54, 380, 86]
+	  DataStoreName		  "RevolutionSensorA"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [155, 55, 185, 85]
+	  UpperLimit		  "RevolutionSensorA.Max"
+	  LowerLimit		  "RevolutionSensorA.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Revolution Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 610, 295, 690]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb,'RevolutionSensor"
+"', 'Read', get_param(gcb, 'ip'));\n                                          "
+"                                      "
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Revolution Sensor Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Motor Revolution Senso"
+"r data."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(A|B|C)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('ROTATION_SENSOR.gif');\npic"
+"=ind2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles')"
+";\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', ['Revol"
+"utionSensor_' ip]);\n"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "A"
+      System {
+	Name			"Revolution Sensor\nRead"
+	Location		[33, 107, 479, 274]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [90, 54, 220, 86]
+	  DataStoreName		  "RevolutionSensorA"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "RevolutionSensor_A"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [275, 63, 305, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "RevolutionSensor_A"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run Button\nInterface"
+      Ports		      [1]
+      Position		      [305, 150, 430, 230]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'RunButton', 'W"
+"rite', '');"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Run Button Interface"
+      MaskDescription	      "Run Button Interface for LEGO Mindstorms NXT.\n"
+"This block should be allocated outside of a Subsystem for RTW code generation"
+"."
+      MaskDisplay	      "image(imread('RUN_BUTTON.jpg'))\n\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Run Button\nInterface"
+	Location		[22, 100, 468, 267]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 63, 95, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "RunButton"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [140, 55, 170, 85]
+	  UpperLimit		  "RunButton.Max"
+	  LowerLimit		  "RunButton.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run Button\nRead"
+      Ports		      [0, 1]
+      Position		      [440, 150, 565, 230]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'RunButton', 'Re"
+"ad', '');"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Run Button Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Run Button status.\n"
+      MaskInitialization      "L = get_param([gcb '/Data Store Read'], 'LineHa"
+"ndles');\nname = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', "
+"'RunButton_');\n"
+      MaskDisplay	      "image(imread('RUN_BUTTON.jpg'))\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Run Button\nRead"
+	Location		[50, 82, 496, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [130, 54, 260, 86]
+	  DataStoreName		  "BatteryVoltage"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "RunButton_"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "RunButton_"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Servo Motor\nInterface"
+      Ports		      [0, 1]
+      Position		      [35, 725, 160, 805]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'ServoMotor', '"
+"Read', get_param(gcb, 'ip'), get_param(gcb, 'mode'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Servo Motor Interface"
+      MaskDescription	      "Servo Motor Interface for LEGO Mindstorms NXT."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on."
+      MaskPromptString	      "Port:|Mode:"
+      MaskStyleString	      "popup(A|B|C),popup(Brake|Float)"
+      MaskTunableValueString  "off,off"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "ip=&1;mode=&2;"
+      MaskInitialization      "[data, map]=imread('SERVO_MOTOR.gif');\npic=ind"
+"2rgb(data,map);\n"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "A|Brake"
+      MaskTabNameString	      ","
+      System {
+	Name			"Servo Motor\nInterface"
+	Location		[105, 188, 551, 355]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [85, 54, 215, 86]
+	  DataStoreName		  "ServoMotorA"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [270, 55, 300, 85]
+	  UpperLimit		  "ServoMotorA.Max"
+	  LowerLimit		  "ServoMotorA.Min"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [345, 63, 375, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Servo Motor\nWrite"
+      Ports		      [1]
+      Position		      [170, 725, 295, 805]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'ServoMotor', 'W"
+"rite', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Servo Motor Write"
+      MaskDescription	      "Write LEGO Mindstorms NXT Servo Motor data."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(A|B|C)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('SERVO_MOTOR.gif');\npic=ind"
+"2rgb(data,map);\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "A"
+      System {
+	Name			"Servo Motor\nWrite"
+	Location		[139, 154, 585, 321]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [70, 63, 100, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [145, 54, 275, 86]
+	  DataStoreName		  "ServoMotorA"
+	  SampleTime		  "-1"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 265, 160, 345]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'SoundSensor', "
+"'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound Sensor Interface"
+      MaskDescription	      "Sound Sensor Interface for LEGO Mindstorms NXT."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('SOUND_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Sound Sensor\nInterface"
+	Location		[38, 109, 484, 276]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 63, 95, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [240, 54, 370, 86]
+	  DataStoreName		  "SoundSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [145, 55, 175, 85]
+	  UpperLimit		  "SoundSensorS1.Max"
+	  LowerLimit		  "SoundSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 265, 295, 345]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'SoundSensor', '"
+"Read', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound Sensor Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Sound Sensor data."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('SOUND_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles');\n"
+"name = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', ['SoundSen"
+"sor_' ip]);"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)\n\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Sound Sensor\nRead"
+	Location		[20, 101, 466, 268]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [165, 54, 295, 86]
+	  DataStoreName		  "SoundSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "SoundSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "SoundSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Sound Tone\nWrite"
+      Ports		      [2]
+      Position		      [440, 264, 565, 346]
+      FunctionName	      "sfun_soundtone"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "Sound Tone Write"
+      MaskDescription	      "Write LEGO Mindstorms NXT Sound Tone data.\n\nF"
+"req: Frequency of a tone sound in Hertz (Hz)\nDur: Duration of a tone sound, "
+"in centiseconds. Value is truncated at 256 centiseconds"
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('BEEP.jpg'))\nport_label('input', "
+"1, 'Freq')\nport_label('input', 2, 'Dur')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound Tone \nInterface"
+      Ports		      [0, 2]
+      Position		      [305, 264, 430, 346]
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound Tone Interface"
+      MaskDescription	      "Sound Tone Interface for LEGO Mindstorms NXT.\n"
+"This block should be allocated outside of a Subsystem for RTW code generation"
+" and\nshould be used only single instance in a model.\n\nFreq: Frequency of a"
+" tone sound in Hertz (Hz)\nDur: Duration of a tone sound in centiseconds. Val"
+"ue is truncated at 256 centiseconds"
+      MaskDisplay	      "image(imread('BEEP.jpg'))\nport_label('output',"
+" 1, 'Freq')\nport_label('output', 2, 'Dur')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Sound Tone \nInterface"
+	Location		[569, 152, 1033, 452]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [0, 2]
+	  Position		  [45, 125, 140, 185]
+	  FunctionName		  "sfun_soundtone"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [230, 125, 260, 155]
+	  UpperLimit		  "14080"
+	  LowerLimit		  "31"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  Position		  [230, 190, 260, 220]
+	  UpperLimit		  "2560"
+	  LowerLimit		  "10"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 133, 370, 147]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [340, 198, 370, 212]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 35]
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Sound Vol Tone\nWrite"
+      Ports		      [3]
+      Position		      [440, 379, 565, 461]
+      AncestorBlock	      "ecrobot_nxt_lib/Sound Tone\nWrite"
+      FunctionName	      "sfun_soundvoltone"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "Sound Vol Tone Write"
+      MaskDescription	      "Write LEGO Mindstorms NXT Sound Tone data with "
+"volume.\n\nFreq: Frequency of a tone sound in Hertz (Hz)\nDur: Duration of a "
+"tone sound, in centiseconds. Value is truncated at 256 centiseconds\nVol: Vol"
+"ume of a tone sound. 0[%] to 100[%]. 0[%] means mute."
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('BEEP.jpg'))\nport_label('input', "
+"1, 'Freq')\nport_label('input', 2, 'Dur')\nport_label('input', 3, 'Vol')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound Vol Tone \nInterface"
+      Ports		      [0, 3]
+      Position		      [305, 379, 430, 461]
+      AncestorBlock	      "ecrobot_nxt_lib/Sound Tone \nInterface"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound Vol Tone Interface"
+      MaskDescription	      "Sound Vol Tone Interface for LEGO Mindstorms NX"
+"T.\nThis block should be allocated outside of a Subsystem for RTW code genera"
+"tion and\nshould be used only single instance in a model.\n\nFreq: Frequency "
+"of a tone sound in Hertz (Hz)\nDur: Duration of a tone sound, in centiseconds"
+". Value is truncated at 256 centiseconds\nVol: Volume of a tone sound. 0[%] t"
+"o 100[%]. 0[%] means mute."
+      MaskDisplay	      "image(imread('BEEP.jpg'))\nport_label('output',"
+" 1, 'Freq')\nport_label('output', 2, 'Dur')\nport_label('output', 3, 'Vol')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Sound Vol Tone \nInterface"
+	Location		[569, 152, 1033, 452]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [0, 3]
+	  Position		  [60, 85, 155, 145]
+	  FunctionName		  "sfun_soundvoltone"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [245, 80, 275, 110]
+	  UpperLimit		  "14080"
+	  LowerLimit		  "31"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  Position		  [245, 145, 275, 175]
+	  UpperLimit		  "2560"
+	  LowerLimit		  "10"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation2"
+	  Position		  [245, 200, 275, 230]
+	  UpperLimit		  "100"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [355, 88, 385, 102]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [355, 153, 385, 167]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  Position		  [355, 208, 385, 222]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  2
+	  Points		  [45, 0; 0, 45]
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  3
+	  Points		  [20, 0; 0, 80]
+	  DstBlock		  "Saturation2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound WAV\nInterface"
+      Ports		      [0, 1]
+      Position		      [305, 495, 430, 575]
+      AncestorBlock	      "ecrobot_nxt_lib/Servo Motor\nInterface"
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'SoundWAV', 'Re"
+"ad', eval(get_param(gcb, 'wav')));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound WAV Interface"
+      MaskDescription	      "Sound WAV Interface for LEGO Mindstorms NXT.\nT"
+"his block should be allocated outside of a Subsystem for RTW code generation."
+"\nSupport for only 2k - 22 kHz 8bit monoral WAV file.\n\nVol: Volume of a WAV"
+" sound. 0[%] to 100[%]. 0[%] means mute"
+      MaskPromptString	      "WAV file name (e.g. 'mtlb'):"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "wav=@1;"
+      MaskInitialization      "wavfile = [wav '.wav'];\nif isempty(which(wavfi"
+"le));\n    error ([wav ' is invalid file name or does not exist in MATLAB pat"
+"h.']);\nend"
+      MaskDisplay	      "disp(wavfile);\nport_label('output', 1, 'Vol')"
+"\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Sound WAV\nInterface"
+	Location		[105, 188, 551, 355]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [85, 54, 215, 86]
+	  DataStoreName		  "SoundWAV"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [270, 55, 300, 85]
+	  UpperLimit		  "SoundWAV.Max"
+	  LowerLimit		  "SoundWAV.Min"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [345, 63, 375, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sound WAV\nWrite"
+      Ports		      [1]
+      Position		      [440, 495, 565, 575]
+      AncestorBlock	      "ecrobot_nxt_lib/Servo Motor\nWrite"
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'SoundWAV', 'Wri"
+"te', eval(get_param(gcb, 'wav')));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Sound WAV Write"
+      MaskDescription	      "Write LEGO Mindstorms NXT Sound WAV volume data"
+".\nSupport for only 2k - 22 kHz 8bit monoral WAV file.\n\nVol: Volume of a WA"
+"V sound. 0[%] to 100[%]. 0[%] means mute."
+      MaskPromptString	      "WAV file name (e.g. 'mtlb'):"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "wav=@1;"
+      MaskInitialization      "wavfile = [wav '.wav'];\nif isempty(which(wavfi"
+"le));\n    error ([wav ' is invalid file name or does not exist in MATLAB pat"
+"h.']);\nend"
+      MaskDisplay	      "disp(wavfile);\nport_label('input', 1, 'Vol')"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Sound WAV\nWrite"
+	Location		[139, 154, 585, 321]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [70, 63, 100, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [145, 54, 275, 86]
+	  DataStoreName		  "SoundWAV"
+	  SampleTime		  "-1"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "System Clock\nInterface"
+      Ports		      []
+      Position		      [575, 265, 700, 345]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'SystemClock', "
+"'Write', '');"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "System Clock Interface"
+      MaskDescription	      "System Clock Interface for LEGO Mindstorms NXT."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on."
+      MaskInitialization      "[data, map]=imread('SYSTEM_CLOCK.gif');\npic=in"
+"d2rgb(data,map);\n"
+      MaskDisplay	      "image(pic)\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"System Clock\nInterface"
+	Location		[541, 123, 1112, 298]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 55, 55, 85]
+	  Value			  "1"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "uint32"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [375, 54, 505, 86]
+	  DataStoreName		  "SystemClock"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 55, 320, 85]
+	  UpperLimit		  "SystemClock.Max"
+	  LowerLimit		  "SystemClock.Min"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [90, 60, 110, 80]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "uint32"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  Position		  [145, 53, 180, 87]
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Unit Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 60; -120, 0]
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "System Clock\nRead"
+      Ports		      [0, 1]
+      Position		      [715, 265, 840, 345]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'SystemClock', '"
+"Read', '');"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "System Clock Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT System Clock data.\n"
+      MaskInitialization      "[data, map]=imread('SYSTEM_CLOCK.gif');\npic=in"
+"d2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles');\n"
+"name = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', 'SystemClo"
+"ck_');\n"
+      MaskDisplay	      "image(pic)\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"System Clock\nRead"
+	Location		[50, 82, 496, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [105, 54, 235, 86]
+	  DataStoreName		  "SystemClock"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "SystemClock_"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "SystemClock_"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Touch Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 150, 160, 230]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'TouchSensor', "
+"'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Touch Sensor Interface"
+      MaskDescription	      "Touch Sensor Interface for LEGO Mindstorms NXT."
+"\nThis block should be allocated outside of a Subsystem for RTW code generati"
+"on."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('TOUCH_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Touch Sensor\nInterface"
+	Location		[599, 323, 1045, 490]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [90, 63, 120, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [250, 54, 380, 86]
+	  DataStoreName		  "TouchSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [165, 55, 195, 85]
+	  UpperLimit		  "TouchSensorS1.Max"
+	  LowerLimit		  "TouchSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Touch Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 150, 295, 230]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'TouchSensor', '"
+"Read', get_param(gcb, 'ip'));"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Touch Sensor Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Touch Sensor data."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('TOUCH_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles');\n"
+"name = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', ['TouchSen"
+"sor_' ip]);\n"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Touch Sensor\nRead"
+	Location		[30, 92, 476, 259]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [105, 54, 235, 86]
+	  DataStoreName		  "TouchSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "TouchSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [275, 63, 305, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "TouchSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "USB Disconnect"
+      Ports		      [1]
+      Position		      [1120, 34, 1245, 116]
+      FunctionName	      "sfun_usb_disconnect"
+      MaskType		      "USB Disconnect"
+      MaskDescription	      "Disconnect a USB connection with the host devic"
+"e."
+      MaskDisplay	      "image(imread('usb1394_02_r.jpg'))\nport_label('"
+"input', 1, 'Disconnect')\n    \n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "USB Rx\nInterface"
+      Ports		      [1]
+      Position		      [850, 35, 975, 115]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Rx\nInterface"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "USB Rx Interface"
+      MaskDescription	      "USB Receive Data Packet Interface for LEGO Mind"
+"storms NXT.\nSize of Receive Data Packet is 64 and data type is uint8.\nThis "
+"block should be allocated outside of a Subsystem for RTW code generation and"
+"\nshould be used only single instance in a model."
+      MaskDisplay	      "image(imread('usb1394_02_l.jpg'))\nport_label('"
+"input', 1, 'USBRx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"USB Rx\nInterface"
+	Location		[576, 682, 1074, 982]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [40, 133, 70, 147]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1]
+	  Position		  [275, 125, 335, 155]
+	  FunctionName		  "sfun_usb_rx"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [170, 125, 200, 155]
+	  UpperLimit		  "255"
+	  LowerLimit		  "0"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "USB Rx\nRead"
+      Ports		      [0, 1]
+      Position		      [985, 35, 1110, 115]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Rx\nRead"
+      FunctionName	      "sfun_usb_rx"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "USB Rx Read"
+      MaskDescription	      "Read LEGO Mindstorms USB data packet. Size of d"
+"ata packet is 64bytes.\nThis block should be used only single instance in a m"
+"odel."
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('usb1394_02_l.jpg'))\nport_label('"
+"output', 1, 'USBRx')\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "USB Tx\nInterface"
+      Ports		      [0, 1]
+      Position		      [850, 149, 975, 231]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Tx\nInterface"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "USB Rx Interface"
+      MaskDescription	      "USB Send Data Packet Interface for LEGO Mindsto"
+"rms NXT.\nSize of Send Data Packet is 64 and data type is uint8.\nThis block "
+"should be allocated outside of a Subsystem for RTW code generation and\nshoul"
+"d be used only single instance in a model."
+      MaskDisplay	      "image(imread('usb1394_02_r.jpg'))\nport_label('"
+"output', 1, 'USBTx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"USB Tx\nInterface"
+	Location		[569, 152, 1033, 452]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [0, 1]
+	  Position		  [85, 130, 145, 160]
+	  FunctionName		  "sfun_usb_tx"
+	  Parameters		  "0.001,0,bd_mode"
+	  MaskInitialization	  "bd_mode = InitDeviceSFunBlock(bdroot);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [220, 130, 250, 160]
+	  UpperLimit		  "255"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 138, 370, 152]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "USB Tx\nWrite"
+      Ports		      [1]
+      Position		      [985, 149, 1110, 231]
+      AncestorBlock	      "ecrobot_nxt_lib/Bluetooth Tx\nWrite"
+      FunctionName	      "sfun_usb_tx"
+      Parameters	      "-1,1,bd_mode"
+      MaskType		      "USB Tx Write"
+      MaskDescription	      "Write LEGO Mindstorms USB data packet. Size of "
+"data packet is 64bytes.\nThis block should be used only single instance in a "
+"model."
+      MaskInitialization      "bd_mode = InitDeviceSFunBlock(bdroot);"
+      MaskDisplay	      "image(imread('usb1394_02_r.jpg'))\nport_label('"
+"input', 1, 'USBTx')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ultrasonic Sensor\nInterface"
+      Ports		      [1]
+      Position		      [35, 380, 160, 460]
+      InitFcn		      "InitInterfaceBlock(bdroot, gcb, 'UltrasonicSens"
+"or', 'Write', get_param(gcb, 'ip'));"
+      StopFcn		      "clearNXTSignalObjects();"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Ultrasonic Sensor Interface"
+      MaskDescription	      "Ultrasonic Sensor Interface for LEGO Mindstorms"
+" NXT.\nThis block should be allocated outside of a Subsystem for RTW code gen"
+"eration."
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskCallbackString      "\n"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('SONIC_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n"
+      MaskDisplay	      "image(pic)\nport_label('input', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Ultrasonic Sensor\nInterface"
+	Location		[22, 100, 468, 267]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 63, 95, 77]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataStoreWrite
+	  Name			  "Data Store\nWrite"
+	  Position		  [220, 54, 350, 86]
+	  DataStoreName		  "UltrasonicSensorS1"
+	  SampleTime		  "0.001"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [140, 55, 170, 85]
+	  UpperLimit		  "UltrasonicSensorS1.Max"
+	  LowerLimit		  "UltrasonicSensorS1.Min"
+	  SampleTime		  "0.001"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Data Store\nWrite"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ultrasonic Sensor\nRead"
+      Ports		      [0, 1]
+      Position		      [170, 380, 295, 460]
+      InitFcn		      "InitAccessorBlock(bdroot, gcb, 'UltrasonicSenso"
+"r', 'Read', get_param(gcb, 'ip'));\n                                         "
+"                                        "
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Ultrasonic Sensor Read"
+      MaskDescription	      "Read LEGO Mindstorms NXT Ultrasonic Sensor data"
+".\n"
+      MaskPromptString	      "Port:"
+      MaskStyleString	      "popup(S1|S2|S3|S4)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ip=&1;"
+      MaskInitialization      "[data, map]=imread('SONIC_SENSOR.gif');\npic=in"
+"d2rgb(data,map);\n\nL = get_param([gcb '/Data Store Read'], 'LineHandles');\n"
+"name = get_param(L.Outport, 'Name');\nset_param(L.Outport, 'Name', ['Ultrason"
+"icSensor_' ip]);\n"
+      MaskDisplay	      "image(pic)\nport_label('output', 1, ip)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "S1"
+      System {
+	Name			"Ultrasonic Sensor\nRead"
+	Location		[50, 82, 496, 249]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DataStoreRead
+	  Name			  "Data Store\nRead"
+	  Position		  [160, 54, 290, 86]
+	  DataStoreName		  "UltrasonicSensorS1"
+	  SampleTime		  "-1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "UltrasonicSensor_S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [340, 63, 370, 77]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "UltrasonicSensor_S1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Data Store\nRead"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Utilities for simulation"
+      Ports		      []
+      Position		      [1121, 380, 1245, 461]
+      DropShadow	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Utilities')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Utilities for simulation"
+	Location		[38, 82, 592, 345]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "XY Map Graph"
+	  Ports			  [2]
+	  Position		  [55, 27, 105, 83]
+	  CopyFcn		  "sfunxymap2([],[],[],'CopyBlock')"
+	  DeleteFcn		  "sfunxymap2([],[],[],'DeleteBlock')"
+	  LoadFcn		  "sfunxymap2([],[],[],'LoadBlock')"
+	  StartFcn		  "sfunxymap2([],[],[],'Start')"
+	  StopFcn		  "sfunxymap2([],[],[],'Stop')"
+	  NameChangeFcn		  "sfunxymap2([],[],[],'NameChange')"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  SimViewingDevice	  on
+	  MaskHideContents	  off
+	  MaskType		  "XYMAP scope."
+	  MaskDescription	  "Plots second input (Y) against first input "
+"(X) at each time step to  create an X-Y plot. Ignores data outside the ranges"
+" specified by x-min, x-max, y-min, y-max. bit map file (with '.bmp' extention"
+") image is also plotted in the scope."
+	  MaskHelp		  "This block can be used to explore limit cyc"
+"les. Look at the m-file sfunxymap.m to see how it works."
+	  MaskPromptString	  "x-min:|x-max:|y-min:|y-max:|track map:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on"
+	  MaskVarAliasString	  ",,,,"
+	  MaskVariables		  "xmin=@1;xmax=@2;ymin=@3;ymax=@4;map=@5;"
+	  MaskDisplay		  "plot([.05 .95 .95 .05 .05],[.45 .45 .95 .95"
+" .45], 0.5+cos(0:0.1:2*pi)*0.3,0.7+sin(0:0.1:2*pi)*0.2)"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "normalized"
+	  MaskValueString	  "0|200|0|200|TRACK_MAP"
+	  MaskTabNameString	  ",,,,"
+	  System {
+	    Name		    "XY Map Graph"
+	    Location		    [651, 485, 1049, 811]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "x"
+	      Position		      [20, 67, 50, 83]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y"
+	      Position		      [20, 157, 50, 173]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type Conversion"
+	      Position		      [115, 63, 165, 87]
+	      OutDataTypeMode	      "double"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type Conversion1"
+	      Position		      [115, 153, 165, 177]
+	      OutDataTypeMode	      "double"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1]
+	      Position		      [240, 30, 260, 210]
+	      ShowName		      off
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfunxy"
+	      Ports		      [1]
+	      Position		      [315, 110, 365, 130]
+	      ShowName		      off
+	      FunctionName	      "sfunxymap2"
+	      Parameters	      "[xmin xmax ymin ymax], map"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "sfunxy"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "x"
+	      SrcPort		      1
+	      DstBlock		      "Data Type Conversion"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y"
+	      SrcPort		      1
+	      DstBlock		      "Data Type Conversion1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data Type Conversion"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data Type Conversion1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+      }
+    }
+    Annotation {
+      Name		      "Disclaimer:\nLEGO(R) is a trademark of the LEGO"
+" Group of companies which does not sponsor, authorize or endorse this demo.\n"
+"LEGO(R) , Mindstorms(R) are registered trademarks of The LEGO Group."
+      Position		      [14, 942]
+      HorizontalAlignment     "left"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+    }
+  }
+}

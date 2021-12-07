@@ -1,0 +1,37 @@
+// written/modified by Nathan Bahr
+
+%% File    : sfun_ir_seeker.tlc
+%%
+%% Abstract: Block for HiTechnic IR Seeker of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_ir_seeker" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign outputAddr = LibBlockOutputSignalAddr(0, "", "", 0)
+  %assign port = SFcnParamSettings.port
+
+  /* %<Type> Block: %<Name> */
+  %if port == 1
+    ecrobot_get_ir_seeker(NXT_PORT_S1, %<outputAddr>);
+  %elseif port == 2
+    ecrobot_get_ir_seeker(NXT_PORT_S2, %<outputAddr>);
+  %elseif port == 3
+    ecrobot_get_ir_seeker(NXT_PORT_S3, %<outputAddr>);
+  %elseif port == 4
+    ecrobot_get_ir_seeker(NXT_PORT_S4, %<outputAddr>);
+  %endif
+%endfunction %% Outputs

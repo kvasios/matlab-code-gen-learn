@@ -1,0 +1,32 @@
+%implements s0_b0_bujck_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcOutputsFcnOfS0B0 = OpaqueTLCBlockFcn("Outputs", 0, 0, 0, 0)
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B0)
+/* M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Inport: '<Root>/In1'
+ *  Outport: '<Root>/Out1'
+ *  Outport: '<Root>/Out2'
+ *  Outport: '<Root>/Out3'
+ *  Outport: '<Root>/Out4'
+ *  Outport: '<Root>/Out5'
+ *  Outport: '<Root>/Out6'
+ */
+%<SLibCG_DumpSSCode("/*@[195b*/",tlcOutputsFcnOfS0B0,"/*@]*/")>\
+%endif
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

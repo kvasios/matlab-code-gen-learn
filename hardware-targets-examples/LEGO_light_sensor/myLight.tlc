@@ -1,0 +1,27 @@
+%% Copyright 2013 The MathWorks, Inc.
+
+%implements "myLight" "C"
+
+%% Function: BlockTypeSetup ===================================================
+%function BlockTypeSetup(block, system) Output
+  %openfile externs
+    #include "ecrobot_interface.h"
+  %closefile externs
+  %<LibCacheExtern(externs)>
+%endfunction
+
+%% Function: Outputs ===========================================================
+%function Outputs(block, system) Output
+  %assign u = LibBlockInputSignal( 0, "", lcv, sigIdx)
+if(%<u>==0.0){
+    ecrobot_set_light_sensor_inactive(NXT_PORT_S3);
+} 
+else{
+    ecrobot_set_light_sensor_active(NXT_PORT_S3);
+}
+%endfunction
+
+
+
+
+

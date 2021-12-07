@@ -1,0 +1,53 @@
+%implements s0_b0_gcnck_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B1 = OpaqueTLCBlockFcn("Start", 0, 1, 0, 2)
+%assign tlcStartFcnOfS0B3 = OpaqueTLCBlockFcn("Start", 0, 3, 0, 2)
+%assign tlcEnableFcnOfS0B1 = OpaqueTLCBlockFcn("Enable", 0, 1, 0, 2)
+%assign tlcEnableFcnOfS0B3 = OpaqueTLCBlockFcn("Enable", 0, 3, 0, 2)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Header")>\
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Body")>\
+%if !WHITE_SPACE(tlcStartFcnOfS0B1)
+/* Start for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2d67*/",tlcStartFcnOfS0B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B3)
+/* Start for M-S-Function: '<Root>/Real-time simulation' */
+%<SLibCG_DumpSSCode("/*@[2d6a*/",tlcStartFcnOfS0B3,"/*@]*/")>\
+%endif
+%<SLibCGIRDumpSystemUserCode(0, "Start", "Trailer")>\
+/* InitializeConditions for Delay: '<Root>/Delay' */
+/*@>2a0a*/arm_copy_DWork./*@>353b*/Delay_DSTATE/*@>7cc*/ = /*@>2996*/arm_copy_P./*@>3532*/Delay_InitialCondition;
+/* InitializeConditions for Delay: '<Root>/Delay1' */
+/*@>2a10*/arm_copy_DWork./*@>353e*/Delay1_DSTATE/*@>7d8*/ = /*@>299c*/arm_copy_P./*@>3535*/Delay1_InitialCondition;
+/* InitializeConditions for Delay: '<Root>/Delay2' */
+/*@>2a16*/arm_copy_DWork./*@>3541*/Delay2_DSTATE/*@>7e4*/ = /*@>29a2*/arm_copy_P./*@>3538*/Delay2_InitialCondition;
+%if !WHITE_SPACE(tlcEnableFcnOfS0B1)
+/* Enable for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2d76*/",tlcEnableFcnOfS0B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS0B3)
+/* Enable for M-S-Function: '<Root>/Real-time simulation' */
+%<SLibCG_DumpSSCode("/*@[2d79*/",tlcEnableFcnOfS0B3,"/*@]*/")>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

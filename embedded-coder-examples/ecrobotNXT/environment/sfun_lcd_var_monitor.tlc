@@ -1,0 +1,27 @@
+%% File    : sfun_lcd_var_monitor.tlc
+%%
+%% Abstract: Block for NXT LCD variable monitor of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_lcd_var_monitor" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign inputAddr = LibBlockInputSignalAddr(0, "", "", 0)
+
+  /* %<Type> Block: %<Name> */
+  ecrobot_sint_var_monitor(%<inputAddr>);
+
+%endfunction %% Outputs

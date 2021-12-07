@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- mode: python -*-
+
+import os
+import sys
+
+length = 24
+fn = None
+for arg in sys.argv[1:]:
+    if arg.isdigit():
+        length = atoi(arg)
+    else:
+        fn = arg
+
+sys.stdout.write("%-*.*s | " % (length, length, os.path.basename(fn)))

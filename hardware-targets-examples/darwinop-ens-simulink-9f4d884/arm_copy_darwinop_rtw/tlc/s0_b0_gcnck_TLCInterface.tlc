@@ -1,0 +1,380 @@
+%implements s0_b0_gcnck_TLCInterface "C"
+
+%function getInputAddr_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2e5b*//*@>2e54*/arm_copy_B./*@>2e60*/Delay"
+%endfunction
+
+%function getInput_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2e6d*/arm_copy_B./*@>2e7a*/Delay"
+%endfunction
+
+%function getInputAddr_0_1_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2e8c*//*@>2e85*/arm_copy_P./*@>2e91*/Constant_Value"
+%endfunction
+
+%function getInput_0_1_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2e9e*/arm_copy_P./*@>2eab*/Constant_Value"
+%endfunction
+
+%function getInputAddr_0_1_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2ebd*//*@>2eb6*/arm_copy_B./*@>2ec2*/Delay1"
+%endfunction
+
+%function getInput_0_1_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2ecf*/arm_copy_B./*@>2edc*/Delay1"
+%endfunction
+
+%function getInputAddr_0_1_0_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2eee*//*@>2ee7*/arm_copy_P./*@>2ef3*/Constant_Value"
+%endfunction
+
+%function getInput_0_1_0_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f00*/arm_copy_P./*@>2f0d*/Constant_Value"
+%endfunction
+
+%function getInputAddr_0_1_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f1f*//*@>2f18*/arm_copy_B./*@>2f24*/Delay2"
+%endfunction
+
+%function getInput_0_1_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f31*/arm_copy_B./*@>2f3e*/Delay2"
+%endfunction
+
+%function getInputAddr_0_1_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2f50*//*@>2f49*/arm_copy_P./*@>2f55*/Constant_Value"
+%endfunction
+
+%function getInput_0_1_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2f62*/arm_copy_P./*@>2f6f*/Constant_Value"
+%endfunction
+
+%function getOutputAddr_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "&/*@<2f7e*//*@>2f79*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutput_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "/*@>2f8b*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutputAddr_0_1_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "&/*@<2fa1*//*@>2f9c*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutput_0_1_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "/*@>2fae*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutputAddr_0_1_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "&/*@<2fc4*//*@>2fbf*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getOutput_0_1_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "/*@>2fd1*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getDWorkAddr_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<2fea*//*@>2fe3*/arm_copy_DWork./*@>2fef*/NetObj"
+%endfunction
+
+%function getDWork_0_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>2ffc*/arm_copy_DWork./*@>3009*/NetObj"
+%endfunction
+
+%function getDWorkAddr_0_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<302f*//*@>3028*/arm_copy_DWork./*@>3034*/TicH"
+%endfunction
+
+%function getDWork_0_3_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>3041*/arm_copy_DWork./*@>304e*/TicH"
+%endfunction
+
+%function getDWorkAddr_0_3_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<3060*//*@>3059*/arm_copy_DWork./*@>3065*/TicL"
+%endfunction
+
+%function getDWork_0_3_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>3072*/arm_copy_DWork./*@>307f*/TicL"
+%endfunction
+
+%function getInputAddr_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<30a5*//*@>309e*/arm_copy_B./*@>30aa*/Delay"
+%endfunction
+
+%function getInput_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>30b7*/arm_copy_B./*@>30c4*/Delay"
+%endfunction
+
+%function getInputAddr_0_1_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_0_1_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<30d6*//*@>30cf*/arm_copy_B./*@>30db*/Delay1"
+%endfunction
+
+%function getInput_0_1_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>30e8*/arm_copy_B./*@>30f5*/Delay1"
+%endfunction
+
+%function getInputAddr_0_1_0_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_0_1_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<3107*//*@>3100*/arm_copy_B./*@>310c*/Delay2"
+%endfunction
+
+%function getInput_0_1_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>3119*/arm_copy_B./*@>3126*/Delay2"
+%endfunction
+
+%function getInputAddr_0_1_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "&/*@<3135*//*@>3130*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutput_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "/*@>3142*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutputAddr_0_1_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "&/*@<3158*//*@>3153*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutput_0_1_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "/*@>3165*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutputAddr_0_1_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "&/*@<317b*//*@>3176*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getOutput_0_1_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "/*@>3188*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getDWorkAddr_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<31a1*//*@>319a*/arm_copy_DWork./*@>31a6*/NetObj"
+%endfunction
+
+%function getDWork_0_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>31b3*/arm_copy_DWork./*@>31c0*/NetObj"
+%endfunction
+
+%function getDWorkAddr_0_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<31e6*//*@>31df*/arm_copy_DWork./*@>31eb*/TicH"
+%endfunction
+
+%function getDWork_0_3_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>31f8*/arm_copy_DWork./*@>3205*/TicH"
+%endfunction
+
+%function getDWorkAddr_0_3_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<3217*//*@>3210*/arm_copy_DWork./*@>321c*/TicL"
+%endfunction
+
+%function getDWork_0_3_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>3229*/arm_copy_DWork./*@>3236*/TicL"
+%endfunction
+
+%function getInputAddr_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<325c*//*@>3255*/arm_copy_B./*@>3261*/Delay"
+%endfunction
+
+%function getInput_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>326e*/arm_copy_B./*@>327b*/Delay"
+%endfunction
+
+%function getInputAddr_0_1_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_0_1_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<328d*//*@>3286*/arm_copy_B./*@>3292*/Delay1"
+%endfunction
+
+%function getInput_0_1_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>329f*/arm_copy_B./*@>32ac*/Delay1"
+%endfunction
+
+%function getInputAddr_0_1_0_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInputAddr_0_1_0_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<32be*//*@>32b7*/arm_copy_B./*@>32c3*/Delay2"
+%endfunction
+
+%function getInput_0_1_0_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>32d0*/arm_copy_B./*@>32dd*/Delay2"
+%endfunction
+
+%function getInputAddr_0_1_0_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_0_1_0_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "&/*@<32ec*//*@>32e7*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutput_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+
+%return "/*@>32f9*/rtb_DarwinOPcommunication_o1"
+%endfunction
+
+%function getOutputAddr_0_1_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "&/*@<330f*//*@>330a*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutput_0_1_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+
+%return "/*@>331c*/rtb_DarwinOPcommunication_o2"
+%endfunction
+
+%function getOutputAddr_0_1_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "&/*@<3332*//*@>332d*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getOutput_0_1_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+
+%return "/*@>333f*/rtb_DarwinOPcommunication_o3"
+%endfunction
+
+%function getDWorkAddr_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<3358*//*@>3351*/arm_copy_DWork./*@>335d*/NetObj"
+%endfunction
+
+%function getDWork_0_1_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>336a*/arm_copy_DWork./*@>3377*/NetObj"
+%endfunction
+
+%function getDWorkAddr_0_3_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<339d*//*@>3396*/arm_copy_DWork./*@>33a2*/TicH"
+%endfunction
+
+%function getDWork_0_3_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>33af*/arm_copy_DWork./*@>33bc*/TicH"
+%endfunction
+
+%function getDWorkAddr_0_3_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<33ce*//*@>33c7*/arm_copy_DWork./*@>33d3*/TicL"
+%endfunction
+
+%function getDWork_0_3_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>33e0*/arm_copy_DWork./*@>33ed*/TicL"
+%endfunction
+

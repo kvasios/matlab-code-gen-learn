@@ -1,0 +1,30 @@
+%implements s0_b0_bujck_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS0B0 = OpaqueTLCBlockFcn("Terminate", 0, 0, 0, 1)
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B0)
+/* Terminate for M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Inport: '<Root>/In1'
+ *  Outport: '<Root>/Out1'
+ *  Outport: '<Root>/Out2'
+ *  Outport: '<Root>/Out3'
+ *  Outport: '<Root>/Out4'
+ *  Outport: '<Root>/Out5'
+ *  Outport: '<Root>/Out6'
+ */
+%<SLibCG_DumpSSCode("/*@[1966*/",tlcTerminateFcnOfS0B0,"/*@]*/")>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

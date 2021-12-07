@@ -1,0 +1,36 @@
+%% File    : sfun_prototype_sensor.tlc
+%%
+%% Abstract: Block for HiTechnic Prototype Sensor of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_prototype_sensor" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign analogOutputAddr = LibBlockOutputSignalAddr(0, "", "", 0)
+  %assign digitalOutputAddr = LibBlockOutputSignalAddr(1, "", "", 0)
+  %assign port = SFcnParamSettings.port
+
+  /* %<Type> Block: %<Name> */
+  %if port == 1
+    ecrobot_get_prototype_sensor(NXT_PORT_S1, %<analogOutputAddr>, %<digitalOutputAddr>);
+  %elseif port == 2
+    ecrobot_get_prototype_sensor(NXT_PORT_S2, %<analogOutputAddr>, %<digitalOutputAddr>);
+  %elseif port == 3
+    ecrobot_get_prototype_sensor(NXT_PORT_S3, %<analogOutputAddr>, %<digitalOutputAddr>);
+  %elseif port == 4
+    ecrobot_get_prototype_sensor(NXT_PORT_S4, %<analogOutputAddr>, %<digitalOutputAddr>);
+  %endif
+%endfunction %% Outputs

@@ -1,0 +1,28 @@
+%% File    : sfun_soundvoltone.tlc
+%%
+%% Abstract: Block for Sound Vol Tone of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_soundvoltone" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign freq = LibBlockInputSignal(0, "", "", 0)
+  %assign dur = LibBlockInputSignal(1, "", "", 0)
+  %assign vol = LibBlockInputSignal(2, "", "", 0)
+
+  /* %<Type> Block: %<Name> */
+  ecrobot_sound_tone(%<freq>, %<dur>, %<vol>);
+%endfunction %% Outputs

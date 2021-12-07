@@ -1,0 +1,284 @@
+%implements s0_b0_bujck_TLCInterface "C"
+
+%function getInputAddr_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "&/*@<1a10*//*@>1a09*/untitled_U./*@>1a15*/In1"
+%endfunction
+
+%function getInput_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "/*@>1a22*/untitled_U./*@>1a2f*/In1"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "&/*@<1a41*//*@>1a3a*/untitled_Y./*@>1a46*/Out1"
+%endfunction
+
+%function getOutput_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "/*@>1a53*/untitled_Y./*@>1a60*/Out1"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "&/*@<1a72*//*@>1a6b*/untitled_Y./*@>1a77*/Out2"
+%endfunction
+
+%function getOutput_0_0_0_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "/*@>1a84*/untitled_Y./*@>1a91*/Out2"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "&/*@<1aa3*//*@>1a9c*/untitled_Y./*@>1aa8*/Out3"
+%endfunction
+
+%function getOutput_0_0_0_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "/*@>1ab5*/untitled_Y./*@>1ac2*/Out3"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "&/*@<1ad4*//*@>1acd*/untitled_Y./*@>1ad9*/Out4"
+%endfunction
+
+%function getOutput_0_0_0_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "/*@>1ae6*/untitled_Y./*@>1af3*/Out4"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "&/*@<1b05*//*@>1afe*/untitled_Y./*@>1b0a*/Out5"
+%endfunction
+
+%function getOutput_0_0_0_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "/*@>1b17*/untitled_Y./*@>1b24*/Out5"
+%endfunction
+
+%function getOutputAddr_0_0_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "&/*@<1b36*//*@>1b2f*/untitled_Y./*@>1b3b*/Out6"
+%endfunction
+
+%function getOutput_0_0_0_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "/*@>1b48*/untitled_Y./*@>1b55*/Out6"
+%endfunction
+
+%function getDWorkAddr_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<1b67*//*@>1b60*/untitled_DW./*@>1b6c*/NetObj"
+%endfunction
+
+%function getDWork_0_0_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>1b79*/untitled_DW./*@>1b86*/NetObj"
+%endfunction
+
+%function getInputAddr_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "&/*@<1bac*//*@>1ba5*/untitled_U./*@>1bb1*/In1"
+%endfunction
+
+%function getInput_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "/*@>1bbe*/untitled_U./*@>1bcb*/In1"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "&/*@<1bdd*//*@>1bd6*/untitled_Y./*@>1be2*/Out1"
+%endfunction
+
+%function getOutput_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "/*@>1bef*/untitled_Y./*@>1bfc*/Out1"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "&/*@<1c0e*//*@>1c07*/untitled_Y./*@>1c13*/Out2"
+%endfunction
+
+%function getOutput_0_0_0_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "/*@>1c20*/untitled_Y./*@>1c2d*/Out2"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "&/*@<1c3f*//*@>1c38*/untitled_Y./*@>1c44*/Out3"
+%endfunction
+
+%function getOutput_0_0_0_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "/*@>1c51*/untitled_Y./*@>1c5e*/Out3"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "&/*@<1c70*//*@>1c69*/untitled_Y./*@>1c75*/Out4"
+%endfunction
+
+%function getOutput_0_0_0_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "/*@>1c82*/untitled_Y./*@>1c8f*/Out4"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "&/*@<1ca1*//*@>1c9a*/untitled_Y./*@>1ca6*/Out5"
+%endfunction
+
+%function getOutput_0_0_0_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "/*@>1cb3*/untitled_Y./*@>1cc0*/Out5"
+%endfunction
+
+%function getOutputAddr_0_0_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "&/*@<1cd2*//*@>1ccb*/untitled_Y./*@>1cd7*/Out6"
+%endfunction
+
+%function getOutput_0_0_0_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "/*@>1ce4*/untitled_Y./*@>1cf1*/Out6"
+%endfunction
+
+%function getDWorkAddr_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<1d03*//*@>1cfc*/untitled_DW./*@>1d08*/NetObj"
+%endfunction
+
+%function getDWork_0_0_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>1d15*/untitled_DW./*@>1d22*/NetObj"
+%endfunction
+
+%function getInputAddr_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "&/*@<1d48*//*@>1d41*/untitled_U./*@>1d4d*/In1"
+%endfunction
+
+%function getInput_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEI(0)>
+
+%return "/*@>1d5a*/untitled_U./*@>1d67*/In1"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "&/*@<1d79*//*@>1d72*/untitled_Y./*@>1d7e*/Out1"
+%endfunction
+
+%function getOutput_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(0)>
+
+%return "/*@>1d8b*/untitled_Y./*@>1d98*/Out1"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "&/*@<1daa*//*@>1da3*/untitled_Y./*@>1daf*/Out2"
+%endfunction
+
+%function getOutput_0_0_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(1)>
+
+%return "/*@>1dbc*/untitled_Y./*@>1dc9*/Out2"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "&/*@<1ddb*//*@>1dd4*/untitled_Y./*@>1de0*/Out3"
+%endfunction
+
+%function getOutput_0_0_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(2)>
+
+%return "/*@>1ded*/untitled_Y./*@>1dfa*/Out3"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "&/*@<1e0c*//*@>1e05*/untitled_Y./*@>1e11*/Out4"
+%endfunction
+
+%function getOutput_0_0_0_2_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(3)>
+
+%return "/*@>1e1e*/untitled_Y./*@>1e2b*/Out4"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "&/*@<1e3d*//*@>1e36*/untitled_Y./*@>1e42*/Out5"
+%endfunction
+
+%function getOutput_0_0_0_2_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(4)>
+
+%return "/*@>1e4f*/untitled_Y./*@>1e5c*/Out5"
+%endfunction
+
+%function getOutputAddr_0_0_0_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "&/*@<1e6e*//*@>1e67*/untitled_Y./*@>1e73*/Out6"
+%endfunction
+
+%function getOutput_0_0_0_2_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCG_TrackEO(5)>
+
+%return "/*@>1e80*/untitled_Y./*@>1e8d*/Out6"
+%endfunction
+
+%function getDWorkAddr_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<1e9f*//*@>1e98*/untitled_DW./*@>1ea4*/NetObj"
+%endfunction
+
+%function getDWork_0_0_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>1eb1*/untitled_DW./*@>1ebe*/NetObj"
+%endfunction
+

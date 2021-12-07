@@ -1,0 +1,36 @@
+%% File    : sfun_gamepad_datalogger.tlc
+%%
+%% Abstract: Block for NXT GamePad Data Logger of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_gamepad_datalogger" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign Data1 = LibBlockInputSignal(0, "", "", 0)
+  %assign Data2 = LibBlockInputSignal(1, "", "", 0)
+  %assign mode = SFcnParamSettings.mode
+
+    /* %<Type> Block: %<Name> */
+  %if mode == 1 
+    ecrobot_bt_data_logger(%<Data1>, %<Data2>);
+  %elseif mode == 2
+    %assign ADC1 = LibBlockInputSignal(2, "", "", 0)
+    %assign ADC2 = LibBlockInputSignal(3, "", "", 0)
+    %assign ADC3 = LibBlockInputSignal(4, "", "", 0)
+    %assign ADC4 = LibBlockInputSignal(5, "", "", 0)
+    ecrobot_bt_adc_data_logger(%<Data1>, %<Data2>, %<ADC1>, %<ADC2>, %<ADC3>, %<ADC4>);
+  %endif
+%endfunction %% Outputs

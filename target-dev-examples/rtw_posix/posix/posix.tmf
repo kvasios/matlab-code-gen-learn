@@ -1,0 +1,488 @@
+# Copyright 1994-2009 The MathWorks, Inc.
+#
+# File    : posix.tmf   $Revision: 1.47.4.18 $
+#
+# Abstract:
+#   Real-Time Workshop template makefile for building a PC or UNIX hosted
+#   Tornado/VxWorks real-time version of Simulink model using generated C
+#   code.
+#
+#   This makefile attempts to conform to the guidelines specified in the
+#   IEEE Std 1003.2-1992 (POSIX) standard.
+#
+#   Note that this template is automatically customized by the Real-Time
+#   Workshop build procedure to create "<model>.mk".
+#
+#   The following defines can be used to modify the behavior of the
+#   build:
+#
+#   OPT_OPTS       - Optimization options. Default is -O. To enable
+#                    debugging specify as OPT_OPTS=-g.
+#   OPTS           - User specific compile options.
+#   USER_SRCS      - Additional user sources, such as files needed by
+#                    S-functions.
+#
+#   The following define is used to set the option string that is passed
+#   to rt_main when invoking the target program:
+#
+#   PROGRAM_OPTS   - This is a string passed to rt_main of the form:
+#
+#                       -opt1 val1 -opt2 val2 -opt3
+#
+#                    The options currently available are:
+#                       -tf 20 => sets stop time to 20
+#                       -w     => starts target program, but waits for message
+#                                 from Simulink (host) before starting the
+#                                 "simulation" (this option applies to external
+#                                 mode only).
+#
+#                     For example:
+#
+#                       PROGRAM_OPTS="-tf inf -w" sets the stop time to infinity
+#                       and waits to start the sim until receiving a message
+#                       from the host.
+#
+#
+#   This template makefile is designed to be used with a system target
+#   file that contains 'rtwgensettings.BuildDirSuffix' see posix.tlc
+
+#------------------------ Macros read by make_rtw ------------------------------
+#
+# The following macros are read by the Real-Time Workshop build procedure:
+#
+#  MAKECMD         - This is the command used to invoke the make utility
+#                    Change path as appropriate for your Torando installation
+#  HOST            - What platform this template makefile is targeted for 
+#                    (i.e. PC,UNIX or ANY)
+#  BUILD           - Invoke make from the Real-Time Workshop build procedure 
+#                    (yes/no)? Setting to 'no' will create model source code and
+#                     makefile only without executing the actual make command.
+#  DOWNLOAD        - Setting to 'no' will create executable object file but it
+#		     will not be loaded and run on the VxWorks target.
+#  SYS_TARGET_FILE - Name of system target file.
+#
+#
+MAKECMD          = make
+HOST             = ANY
+BUILD            = yes
+DOWNLOAD_SUCCESS = task spawned
+SYS_TARGET_FILE  = posix.tlc
+MAKEFILE_FILESEP = /
+
+#---------------------- Tokens expanded by make_rtw ----------------------------
+#
+# The following tokens, when wrapped with "|>" and "<|" are expanded by the 
+# Real-Time Workshop build procedure.
+#   
+#  MODEL               - Name of the Simulink block diagram
+#  MODULES             - Any additional generated source modules
+#  MAKEFILE            - Name of makefile created from template makefile <model>.mk
+#  MATLAB_ROOT         - Path to where MATLAB is installed. 
+#  MATLAB_BIN          - Path to MATLAB executable.
+#  S_FUNCTIONS         - List of S-functions.
+#  S_FUNCTIONS_LIB     - List of S-functions libraries to link.
+#  SOLVER              - Solver source file name
+#  NUMST               - Number of sample times
+#  TID01EQ             - yes (1) or no (0): Are sampling rates of continuous task 
+#                        (tid=0) and 1st discrete task equal.
+#  NCSTATES            - Number of continuous states
+#  COMPUTER            - Computer type. See the MATLAB computer command.
+#  BUILDARGS           - Options passed in at the command line.
+#  MULTITASKING        - yes (1) or no (0): Is solver mode multitasking
+#  MODELREFS           - List of referenced models
+#  EXT_MODE            - yes (1) or no (0): Build for external mode
+#  EXTMODE_TRANSPORT   - Name of transport mechanism (e.g. tcpip, serial) for extmode
+#  EXTMODE_STATIC      - yes (1) or no (0): Use static instead of dynamic mem alloc.
+#  EXTMODE_STATIC_SIZE - Size of static memory allocation buffer.
+#  MAT_FILE            - yes (1) or no (0): generate a model.mat file?
+#  STETHOSCOPE         - yes (1) or no (0): Build for use with StethoScope
+#  LTTNG               - yes (1) or no (0): Build for use with LTTNG-UST
+
+MODEL               = |>MODEL_NAME<|
+MODULES             = |>MODEL_MODULES<|
+MAKEFILE            = |>MAKEFILE_NAME<|
+MATLAB_ROOT         = |>MATLAB_ROOT<|
+ALT_MATLAB_ROOT     = |>ALT_MATLAB_ROOT<|
+MATLAB_BIN          = |>MATLAB_BIN<|
+ALT_MATLAB_BIN      = |>ALT_MATLAB_BIN<|
+MASTER_ANCHOR_DIR   = |>MASTER_ANCHOR_DIR<|
+START_DIR           = |>START_DIR<|
+S_FUNCTIONS         = |>S_FUNCTIONS<|
+S_FUNCTIONS_LIB     = |>S_FUNCTIONS_LIB<|
+SOLVER              = |>SOLVER<|
+NUMST               = |>NUMST<|
+TID01EQ             = |>TID01EQ<|
+NCSTATES            = |>NCSTATES<|
+MEM_ALLOC           = |>MEM_ALLOC<|
+COMPUTER            = |>COMPUTER<|
+BUILDARGS           = |>BUILDARGS<|
+MULTITASKING        = |>MULTITASKING<|
+EXT_MODE            = |>EXT_MODE<|
+EXTMODE_TRANSPORT   = |>EXTMODE_TRANSPORT<|
+EXTMODE_STATIC      = |>EXTMODE_STATIC_ALLOC<|
+EXTMODE_STATIC_SIZE = |>EXTMODE_STATIC_ALLOC_SIZE<|
+STETHOSCOPE         = |>STETHOSCOPE<|
+LTTNG               = |>LTTNG<|
+BASE_PRIORITY       = |>BASE_PRIORITY<|
+BASE_THREAD_AFFINITY_MASK = |>BASE_THREAD_AFFINITY_MASK<|
+MODELREFS           = |>MODELREFS<|
+SHARED_SRC          = |>SHARED_SRC<|
+SHARED_SRC_DIR      = |>SHARED_SRC_DIR<|
+SHARED_BIN_DIR      = |>SHARED_BIN_DIR<|
+SHARED_LIB          = |>SHARED_LIB<|
+TARGET_LANG_EXT     = |>TARGET_LANG_EXT<|
+TARGET_TOOLCHAIN    = |>TARGET_TOOLCHAIN<|
+
+
+
+MODELLIB                  = |>MODELLIB<|
+MODELREF_LINK_LIBS        = |>MODELREF_LINK_LIBS<|
+MODELREF_INC_PATH         = |>START_MDLREFINC_EXPAND_INCLUDES<|-I|>MODELREF_INC_PATH<| |>END_MDLREFINC_EXPAND_INCLUDES<|
+RELATIVE_PATH_TO_ANCHOR   = |>RELATIVE_PATH_TO_ANCHOR<|
+# NONE: standalone, SIM: modelref sim, RTW: modelref rtw
+MODELREF_TARGET_TYPE      = |>MODELREF_TARGET_TYPE<|
+
+#-- In the case when directory name contains space ---
+ifneq ($(MATLAB_ROOT),$(ALT_MATLAB_ROOT))
+    MATLAB_ROOT := $(ALT_MATLAB_ROOT)
+endif
+ifneq ($(MATLAB_BIN),$(ALT_MATLAB_BIN))
+    MATLAB_BIN := $(ALT_MATLAB_BIN)
+endif
+
+#-------------------------------- GNU Tools ------------------------------------
+#
+# You may need to modify the following variables if you have installed the GNU
+# Tools in a different location.
+#
+VXWORKS_ROOT = /opt/vxworks/wrapper/linux/bin
+PATH:=$(PATH):$(VXWORKS_ROOT)
+ADD_LDFLAGS=
+ADD_CFLAGS=
+OBJ_PATH = $(TARGET_TOOLCHAIN)
+
+ifeq ($(TARGET_TOOLCHAIN),sled11-x86-gcc4.x)
+	CC  = gcc
+	CXX = g++
+	LD  = ld
+	AR  = ar
+ifeq ($(shell uname -m),x86_64)
+	ADD_LDFLAGS = -m32 -pthread -lrt
+        ADD_CFLAGS = -m32
+else
+	ADD_LDFLAGS = -pthread -lrt
+endif
+else ifeq ($(TARGET_TOOLCHAIN),sled11-x86_64-gcc4.x)
+	CC  = gcc 
+	CXX = g++
+	LD  = ld
+	AR  = ar 
+	ADD_LDFLAGS = -lpthread -lrt
+else ifeq ($(TARGET_TOOLCHAIN),qnx6.5-x86-gcc4.x)
+	MAKE:= source /volume/qnx/i686Linux/qcc-environment.sh qnx65 > /dev/null; $(MAKE)
+	CC  = QCC -lang-c
+	CXX = QCC
+	LD  = QCC
+	AR  = ar
+        ADD_CFLAGS = -D__QNX__
+	ADD_LDFLAGS = -lsocket -lm
+else ifeq ($(TARGET_TOOLCHAIN),qnx6.3sp3-x86-gcc3.3)
+	MAKE:= source /volume/qnx/i686Linux/qcc-environment.sh qnx63sp3 > /dev/null; $(MAKE)
+	CC  = QCC -V 3.3.5,gcc_ntox86_cpp -lang-c
+	CXX = QCC -V 3.3.5,gcc_ntox86_cpp 
+	LD  = QCC -V 3.3.5,gcc_ntox86_cpp 
+	AR  = ar
+    ADD_CFLAGS = -D__QNX__
+	ADD_LDFLAGS = -lsocket -lm
+	OBJ_PATH = qnx6.3-x86-gcc3.3
+else 
+	CC  = $(TARGET_TOOLCHAIN)-gcc
+	CXX = $(TARGET_TOOLCHAIN)-g++
+	LD  = $(TARGET_TOOLCHAIN)-ld
+	AR  = $(TARGET_TOOLCHAIN)-ar
+    ADD_LDFLAGS = -non-static
+endif
+
+#------------------------ RTW page Options -------------------------------------
+#
+# External Mode
+# Uncomment -DVERBOSE to have information printed to stdout
+# To add a new transport layer, see the comments in
+#   <matlabroot>/toolbox/simulink/simulink/extmode_transports.m
+ifeq ($(EXT_MODE),1)
+	EXT_CC_OPTS = -DEXT_MODE 
+	ifeq ($(EXTMODE_TRANSPORT), 0) 
+		EXT_SRC = ext_svr.c updown.c ext_work.c rtiostream_interface.c rtiostream_tcpip.c
+	endif
+	ifeq ($(EXTMODE_STATIC),1)
+		EXT_SRC     += mem_mgr.c
+		EXT_CC_OPTS += -DEXTMODE_STATIC -DEXTMODE_STATIC_SIZE=$(EXTMODE_STATIC_SIZE)
+	endif
+endif
+
+
+#------------------------ LTTNG -------------------------------------
+#
+
+ifeq ($(LTTNG),1)
+	LTTNG_CC_OPTS = -DLTTNG 
+        LTTNG_LIBS = -llttng-ust
+endif
+
+
+#------------------------------ Include Path -----------------------------------
+#
+MATLAB_INCLUDES = -I$(MATLAB_ROOT)/simulink/include \
+				  -I$(MATLAB_ROOT)/extern/include \
+				  -I$(MATLAB_ROOT)/rtw/c/src \
+				  -I$(MATLAB_ROOT)/rtw/c/posix/devices
+
+POSIX_INCLUDES =  -I$(POSIX_ROOT)/rtw/c/src/ext_mode/common
+
+# Additional includes 
+ADD_INCLUDES = |>START_EXPAND_INCLUDES<| -I|>EXPAND_DIR_NAME<| |>END_EXPAND_INCLUDES<|
+
+SHARED_INCLUDES =
+ifneq ($(SHARED_SRC_DIR),)
+	SHARED_INCLUDES = -I$(SOURCE_DIR)/$(SHARED_SRC_DIR) 
+endif
+
+INCLUDES = -I. -I.. -I$(RELATIVE_PATH_TO_ANCHOR) \
+		   $(MATLAB_INCLUDES) \
+		   $(POSIX_INCLUDES) \
+		   $(ADD_INCLUDES) \
+		   $(SCOPE_INCLUDES) \
+		   $(MODELREF_INC_PATH) \
+		   $(SHARED_INCLUDES) 
+
+
+#----------------------------- RTModel Flags -----------------------------------
+RTM_CC_OPTS = -DUSE_RTMODEL
+
+#-------------------------------- C Flags --------------------------------------
+# General User Options 
+OPTS      =
+OPT_OPTS  = -g
+
+# Required Options
+CC_OPTS   = $(strip $(REQ_OPTS) $(OPTS) $(SCOPE_OPTS) $(EXT_CC_OPTS) $(LTTNG_CC_OPTS) $(LOG_OPTS) $(RTM_CC_OPTS))
+
+CFLAGS = $(ADDITIONAL_CFLAGS) -W -Wall -DMODEL=$(MODEL) -DRT -DNUMST=$(NUMST) -DTID01EQ=$(TID01EQ) -DNCSTATES=$(NCSTATES) -D$(MEM_ALLOC) -DMULTITASKING=$(MULTITASKING)
+LIBS =
+SRCS = 
+ADD_LIBS =
+
+# -----------------------------------------------------------------------------
+# model trigger
+
+ifeq (|>EXTERNAL_CLOCK_SOURCE<|,1) # external clock source
+    CFLAGS   += -DEXTERNAL_TIMER -DEXTERNAL_TIMER_PREFIX=|>EXTERNAL_TIMER_PREFIX<|
+    LIBS     += |>EXTERNAL_TIMER_LIBRARIES<|
+    SRCS     += |>EXTERNAL_TIMER_SOURCE<|
+    INCLUDES += |>EXTERNAL_TIMER_INCLUDES<|
+endif
+
+ifeq (|>NO_CLOCK_SOURCE<|,1) # no clock source, block triggered
+    CFLAGS   += -DNO_TIMER
+endif
+
+ifeq (|>ENSURE_HARD_REALTIME<|,1) # ensure hard realtime, abort on violation
+    CFLAGS   += -DENSURE_HARD_REALTIME
+endif
+
+
+# -----------------------------------------------------------------------------
+# defines
+
+RT_MAIN_DEFINES = -DBASE_PRIORITY=$(BASE_PRIORITY) -DBASE_THREAD_AFFINITY_MASK=$(BASE_THREAD_AFFINITY_MASK)
+
+CFLAGS   += -c $(CC_OPTS) $(INCLUDES) $(OPT_OPTS) $(ADD_CFLAGS) -DMATLAB_VERSION_$(MATLAB_VERSION)
+CPPFLAGS = $(CFLAGS) $(CPP_OPTS)
+LDFLAGS  = $(ADD_LDFLAGS)
+
+|>START_PRECOMP_LIBRARIES<|
+LIBS += |>EXPAND_LIBRARY_NAME<|.a |>END_PRECOMP_LIBRARIES<|
+|>START_EXPAND_LIBRARIES<|
+LIBS += |>EXPAND_LIBRARY_NAME<|.a |>END_EXPAND_LIBRARIES<|
+LIBS += $(S_FUNCTIONS_LIB) $(LTTNG_LIBS)
+
+PERL = $(MATLAB_ROOT)\sys\perl\win32\bin\perl
+
+#----------------------------- Source Files ------------------------------------
+#
+USER_SRCS =
+SRCS     += $(MODULES) $(S_FUNCTIONS) $(USER_SRCS)
+OBJS      = $(addsuffix .o, $(basename $(SRCS)))
+
+
+ifeq (|>BUILD_WITHOUT_FRAMEWORK<|,0)
+FRAMEWORK_SOURCES  =  rt_main.c
+endif
+
+
+ifeq ($(MODELREF_TARGET_TYPE), NONE)
+	PROGRAM            = $(RELATIVE_PATH_TO_ANCHOR)/$(MODEL)
+	BIN_SETTING        = $(CXX) -o $(PROGRAM)
+	BUILD_PRODUCT_TYPE = "executable"
+	SRCS               += $(MODEL).$(TARGET_LANG_EXT) $(FRAMEWORK_SOURCES) rt_sim.c $(EXT_SRC) $(SOLVER)
+else
+	# Model reference rtw target
+	PRODUCT            = $(MODELLIB)
+	BUILD_PRODUCT_TYPE = "library"
+endif
+
+SHARED_OBJS := $(addsuffix .o, $(basename $(wildcard $(SHARED_SRC))))
+
+#--------------------------------- Rules ---------------------------------------
+ifeq ($(SOURCE_DIR),)
+
+ifeq ($(MODELREF_TARGET_TYPE),NONE)
+$(PROGRAM):
+	@mkdir -p obj/$(OBJ_PATH)
+	@$(MAKE) --no-print-directory \
+		-f $(CURDIR)/$(MAKEFILE) \
+		SOURCE_DIR=$(CURDIR) \
+		ADD_LIBS="$(ADD_LIBS)" \
+		OPTS="$(OPTS)" \
+		$(PROGRAM)
+else
+$(PRODUCT):
+	@mkdir -p obj/$(OBJ_PATH)
+	@$(MAKE) --no-print-directory \
+		-f $(CURDIR)/$(MAKEFILE) \
+		SOURCE_DIR=$(CURDIR) \
+		$(PRODUCT)
+endif
+
+else
+
+#ifeq ($(TARGET_TOOLCHAIN),sled11-x86_64-gcc4.x)
+#$(PROGRAM):
+#	@mkdir -p obj/$(OBJ_PATH)
+#	ssh thanatos $(MAKE) --no-print-directory \
+#		-f $(SOURCE_DIR)/$(MAKEFILE) \
+#		-C $(SOURCE_DIR) \
+#        TARGET_TOOLCHAIN=sled11-x86-gcc4.x \
+#		$(PROGRAM)
+#else
+
+VPATH:=$(SOURCE_DIR)
+
+ifeq ($(MODELREF_TARGET_TYPE),NONE)
+$(PROGRAM): $(OBJS) $(SHARED_LIB) $(MODELREF_LINK_LIBS)
+	$(BIN_SETTING) $(OBJS) $(MODELREF_LINK_LIBS) $(SHARED_LIB) $(ADD_LIBS) $(LIBS) $(LDFLAGS) $(ADDITIONAL_LDFLAGS)
+	@echo "### Created $(BUILD_PRODUCT_TYPE): $(CURDIR)/$@"
+else
+$(PRODUCT): $(OBJS) $(SHARED_LIB)
+	@rm -f $(MODELLIB)
+	$(AR) ruvs $(MODELLIB) $(OBJS)
+	@echo "### Created $(MODELLIB)"
+	@echo "### Created $(BUILD_PRODUCT_TYPE): $@"
+endif
+
+#endif
+endif
+
+HEADERS := $(wildcard ../../*.h)
+
+$(SHARED_OBJS) : $(SHARED_BIN_DIR)/%.o : $(SHARED_SRC_DIR)/%.c 
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) -o $@ -c $(CFLAGS) $<
+
+%.o : %.c $(HEADERS)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : ../%.c $(HEADERS)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : %.cpp $(HEADERS)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CXX) $(CPPFLAGS)  $<
+
+%.o : ../%.cpp $(HEADERS)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CXX) $(CPPFLAGS)  $<
+
+%.o : $(RELATIVE_PATH_TO_ANCHOR)/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS)  $<
+
+%.o : $(RELATIVE_PATH_TO_ANCHOR)/%.cpp
+	@$(POSIX_ROOT)/print_basename $<
+	$(CXX) $(CPPFLAGS)  $<
+
+%.o : $(POSIX_ROOT)/posix/%.c $(HEADERS)
+	@$(POSIX_ROOT)/print_basename $<	
+	$(CC) $(CFLAGS) $(RT_MAIN_DEFINES) $<
+
+%.o : $(MATLAB_ROOT)/rtw/c/posix/devices/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : $(POSIX_ROOT)/rtw/c/src/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : $(POSIX_ROOT)/rtw/c/src/ext_mode/common/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : $(POSIX_ROOT)/rtw/c/src/rtiostream/rtiostreamtcpip/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : $(POSIX_ROOT)/rtw/c/src/ext_mode/custom/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+|>START_EXPAND_RULES<|%.o : |>EXPAND_DIR_NAME<|/%.c $(wildcard |>EXPAND_DIR_NAME<|/*.h)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+|>END_EXPAND_RULES<|
+
+|>START_EXPAND_RULES<|%.o : |>EXPAND_DIR_NAME<|/%.cpp $(wildcard |>EXPAND_DIR_NAME<|/*.h)
+	@$(POSIX_ROOT)/print_basename $<
+	$(CXX) $(CPPFLAGS) $<
+|>END_EXPAND_RULES<|
+
+%.o : $(MATLAB_ROOT)/simulink/src/%.c
+	@$(POSIX_ROOT)/print_basename $<
+	$(CC) $(CFLAGS) $<
+
+%.o : $(MATLAB_ROOT)/simulink/src/%.cpp
+	@$(POSIX_ROOT)/print_basename $<
+	$(CXX) $(CPPFLAGS) $<
+
+# Libraries:
+
+|>START_EXPAND_LIBRARIES<|MODULES_|>EXPAND_LIBRARY_NAME<| = \
+|>START_EXPAND_MODULES<|    |>EXPAND_MODULE_NAME<|.o \
+|>END_EXPAND_MODULES<|
+
+|>EXPAND_LIBRARY_NAME<|.a : $(MAKEFILE) rtw_proj.tmw $(MODULES_|>EXPAND_LIBRARY_NAME<|)
+	@echo "### Creating $@ "
+	$(AR) r $@ $(MODULES_|>EXPAND_LIBRARY_NAME<|)
+
+|>END_EXPAND_LIBRARIES<|
+
+|>START_PRECOMP_LIBRARIES<|MODULES_|>EXPAND_LIBRARY_NAME<| = \
+|>START_EXPAND_MODULES<|    |>EXPAND_MODULE_NAME<|.o \
+|>END_EXPAND_MODULES<|
+
+|>EXPAND_LIBRARY_NAME<|.a : $(MAKEFILE) rtw_proj.tmw $(MODULES_|>EXPAND_LIBRARY_NAME<|)
+	@echo "### Creating $@ "
+	$(AR) r $@ $(MODULES_|>EXPAND_LIBRARY_NAME<|)
+
+|>END_PRECOMP_LIBRARIES<|
+
+
+#----------------------------- Dependencies ------------------------------------
+
+$(OBJS) : $(MAKEFILE) rtw_proj.tmw
+
+$(SHARED_LIB) : $(SHARED_OBJS)
+	@echo "### Creating $@ "
+	$(AR) ruvs $@ $(SHARED_OBJS)
+	@echo "### $@ Created  "

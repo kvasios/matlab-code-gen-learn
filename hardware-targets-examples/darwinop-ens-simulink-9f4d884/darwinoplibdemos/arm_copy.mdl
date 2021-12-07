@@ -1,0 +1,1899 @@
+Model {
+  Name			  "arm_copy"
+  Version		  9.3
+  SavedCharacterEncoding  "UTF-8"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.8"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
+    IsExportFunctionModel   0
+    IsArchitectureModel	    0
+    NumParameterArguments   0
+    NumExternalFileReferences 1
+    ExternalFileReference {
+      Reference		      "lib_darwinop/Real-time simulation"
+      Path		      "arm_copy/Real-time simulation"
+      SID		      "1"
+      Type		      "LIBRARY_BLOCK"
+    }
+    OrderedModelArguments   1
+  }
+  DiagnosticSuppressor	  "on"
+  WebScopes_FoundationPlugin "on"
+  LogicAnalyzerPlugin	  "on"
+  SLCCPlugin		  "on"
+  NotesPlugin		  "on"
+  EnableAccessToBaseWorkspace on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "glnxa64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [28.0, 45.0, 1224.0, 1205.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[1]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+	Minimized		"Off"
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[991.0, 1028.0]
+	ZoomFactor		[1.0]
+	Offset			[-67.32421875, -211.75]
+      }
+      Object {
+	$PropName		"DockComponentsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.DockComponentInfo"
+	Type			"GLUE2:PropertyInspector"
+	ID			"Property Inspector"
+	Visible			[1]
+	CreateCallback		""
+	UserData		""
+	Floating		[0]
+	DockPosition		"Right"
+	Width			[640]
+	Height			[480]
+	Minimized		"On"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAEPvwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQBAAAAQwAABD4AAABiAP///wAAAAEAAAAAAAAAAPwCA"
+      "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
+      "QBjAHQAbwByAAAAAAD/////AAABrAD///8AAAQFAAAEPgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
+      "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAOH/////wAAAAAAAAAA/"
+      "////wEAAAO5/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+    }
+  }
+  HideAutomaticNames	  on
+  Created		  "Wed Jul 02 15:50:08 2014"
+  Creator		  "florent"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "vasi_ko"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 15 16:13:41 2019"
+  RTWModifiedTimeStamp	  485107997
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowAllPropagatedSignalLabels	off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ShowSubsystemDomainSpec off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultiThreadCoSim	  on
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    7
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "arm_copy"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "arm_copy"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      8
+      Version		      "19.0.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  9
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  on
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  on
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	  SolverOrder		  3
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  10
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveOperatingPoint	  off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  11
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  GainParamInheritBuiltInType off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "1"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  UseRowMajorAlgorithm	  off
+	  LabelGuidedReuse	  off
+	  MultiThreadedLoops	  off
+	  DenormalBehavior	  "GradualUnderflow"
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  12
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "warning"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  OperatingPointInterfaceChecksumMismatchMsg "warning"
+	  NonCurrentReleaseOperatingPointMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  PregeneratedLibrarySubsystemCodeDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "none"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
+	  DebugExecutionForFMUViaOutOfProcess off
+	  ArithmeticOperatorsInVariantConditions "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  13
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdBitPerSizeT	  32
+	  ProdBitPerPtrDiffT	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Generic->32-bit Embedded Processor"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  14
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  15
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  off
+	  MATLABDynamicMemAllocThreshold 65536
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  16
+	  Version		  "19.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "TargetLang"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "darwinoplib.tlc"
+	  HardwareBoard		  "None"
+	  ShowCustomHardwareApp	  off
+	  ShowEmbeddedHardwareApp off
+	  TLCOptions		  ""
+	  GenCodeOnly		  on
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "darwinoplib.tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  "DarwinOP code generator"
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation "off"
+	  SILDebugging		  off
+	  TargetLang		  "C++"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      17
+	      Version		      "19.0.0"
+	      DisabledProps	      []
+	      Description	      ""
+	      Components	      []
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses off
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Classic"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	    }
+	    Simulink.STFCustomTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      18
+	      Version		      "19.0.0"
+	      Array {
+		Type			"Cell"
+		Dimension		2
+		Cell			"GenerateSampleERTMain"
+		Cell			"ModelReferenceCompliant"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant off
+	      CompOptLevelCompliant   off
+	      ConcurrentExecutionCompliant off
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    on
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      SupportContinuousTime   off
+	      SupportNonInlinedSFcns  off
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      PreserveStateflowLocalDataDimensions off
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.ERTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	off
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      SystemTargetFile	      "darwinoplib.tlc"
+	      DialogCategory	      0
+	      Array {
+		Type			"Handle"
+		Dimension		1
+		Simulink.ERTTargetCC {
+		  $BackupClass		  "Simulink.TargetCC"
+		  $ObjectID		  19
+		  Version		  "19.0.0"
+		  Array {
+		    Type		    "Cell"
+		    Dimension		    2
+		    Cell		    "GenerateSampleERTMain"
+		    Cell		    "ModelReferenceCompliant"
+		    PropName		    "DisabledProps"
+		  }
+		  Description		  ""
+		  Components		  []
+		  TargetFcnLib		  "ansi_tfl_table_tmw.mat"
+		  TargetLibSuffix	  ""
+		  TargetPreCompLibLocation ""
+		  GenFloatMathFcnCalls	  "NOT IN USE"
+		  TargetLangStandard	  "C89/C90 (ANSI)"
+		  CodeReplacementLibrary  "None"
+		  UtilityFuncGeneration	  "Auto"
+		  MultiwordTypeDef	  "System defined"
+		  MultiwordLength	  2048
+		  DynamicStringBufferSize 256
+		  GenerateFullHeader	  on
+		  InferredTypesCompatibility off
+		  ExistingSharedCode	  ""
+		  GenerateSampleERTMain	  off
+		  GenerateTestInterfaces  off
+		  ModelReferenceCompliant on
+		  ParMdlRefBuildCompliant off
+		  CompOptLevelCompliant	  off
+		  ConcurrentExecutionCompliant off
+		  IncludeMdlTerminateFcn  on
+		  GeneratePreprocessorConditionals "Use local settings"
+		  CombineOutputUpdateFcns on
+		  CombineSignalStateStructs off
+		  GroupInternalDataByFunction off
+		  SuppressErrorStatus	  off
+		  IncludeFileDelimiter	  "Auto"
+		  ERTCustomFileBanners	  on
+		  SupportAbsoluteTime	  on
+		  LogVarNameModifier	  "rt_"
+		  MatFileLogging	  off
+		  MultiInstanceERTCode	  off
+		  CodeInterfacePackaging  "Nonreusable function"
+		  PurelyIntegerCode	  off
+		  SupportNonFinite	  on
+		  SupportComplex	  on
+		  SupportContinuousTime	  off
+		  SupportNonInlinedSFcns  off
+		  RemoveDisableFunc	  off
+		  RemoveResetFunc	  on
+		  SupportVariableSizeSignals off
+		  ParenthesesLevel	  "Nominal"
+		  CastingMode		  "Nominal"
+		  PreserveStateflowLocalDataDimensions off
+		  MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.ERTCustomization"
+		  ModelStepFunctionPrototypeControlCompliant off
+		  CPPClassGenCompliant	  off
+		  AutosarCompliant	  off
+		  MDXCompliant		  off
+		  GRTInterface		  off
+		  GenerateAllocFcn	  off
+		  UseToolchainInfoCompliant off
+		  GenerateSharedConstants on
+		  CoderGroups		  []
+		  AccessMethods		  []
+		  LookupTableObjectStructAxisOrder "1,2,3,4,..."
+		  LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+		  LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+		  ArrayLayout		  "Column-major"
+		  UnsupportedSFcnMsg	  "error"
+		  ERTHeaderFileRootName	  "$R$E"
+		  ERTSourceFileRootName	  "$R$E"
+		  ERTDataFileRootName	  "$R_data"
+		  GenerateASAP2		  off
+		  DSAsUniqueAccess	  off
+		  ExtMode		  off
+		  ExtModeTransport	  0
+		  ExtModeStaticAlloc	  off
+		  ExtModeStaticAllocSize  1000000
+		  ExtModeTesting	  off
+		  ExtModeMexFile	  "ext_comm"
+		  ExtModeMexArgs	  ""
+		  ExtModeIntrfLevel	  "Level1"
+		  InlinedParameterPlacement "Hierarchical"
+		  TargetOS		  "BareBoardExample"
+		  MultiInstanceErrorCode  "Error"
+		  RootIOFormat		  "Individual arguments"
+		  RTWCAPISignals	  off
+		  RTWCAPIParams		  off
+		  RTWCAPIStates		  off
+		  RTWCAPIRootIO		  off
+		  ERTSrcFileBannerTemplate "ert_code_template.cgt"
+		  ERTHdrFileBannerTemplate "ert_code_template.cgt"
+		  ERTDataSrcFileTemplate  "ert_code_template.cgt"
+		  ERTDataHdrFileTemplate  "ert_code_template.cgt"
+		  ERTCustomFileTemplate	  "darwinoplib_main.tlc"
+		  EnableDataOwnership	  off
+		  SignalDisplayLevel	  10
+		  ParamTuneLevel	  10
+		  GlobalDataDefinition	  "Auto"
+		  DataDefinitionFile	  "global.c"
+		  GlobalDataReference	  "Auto"
+		  ERTFilePackagingFormat  "Modular"
+		  RateTransitionBlockCode "Inline"
+		  DataReferenceFile	  "global.h"
+		  PreserveExpressionOrder off
+		  PreserveIfCondition	  off
+		  ConvertIfToSwitch	  off
+		  PreserveExternInFcnDecls on
+		  PreserveStaticInFcnDecls on
+		  SuppressUnreachableDefaultCases off
+		  EnableSignedLeftShifts  on
+		  EnableSignedRightShifts on
+		  IndentStyle		  "K&R"
+		  IndentSize		  "2"
+		  NewlineStyle		  "Default"
+		  MaxLineWidth		  80
+		  EnableUserReplacementTypes off
+		  Array {
+		    Type		    "Struct"
+		    Dimension		    1
+		    MATStruct {
+		    double		    ""
+		    single		    ""
+		    int32		    ""
+		    int16		    ""
+		    int8		    ""
+		    uint32		    ""
+		    uint16		    ""
+		    uint8		    ""
+		    boolean		    ""
+		    int			    ""
+		    uint		    ""
+		    char		    ""
+		    uint64		    ""
+		    int64		    ""
+		    }
+		    PropName		    "ReplacementTypes"
+		  }
+		  MaxIdInt64		  "MAX_int64_T"
+		  MinIdInt64		  "MIN_int64_T"
+		  MaxIdUint64		  "MAX_uint64_T"
+		  MaxIdInt32		  "MAX_int32_T"
+		  MinIdInt32		  "MIN_int32_T"
+		  MaxIdUint32		  "MAX_uint32_T"
+		  MaxIdInt16		  "MAX_int16_T"
+		  MinIdInt16		  "MIN_int16_T"
+		  MaxIdUint16		  "MAX_uint16_T"
+		  MaxIdInt8		  "MAX_int8_T"
+		  MinIdInt8		  "MIN_int8_T"
+		  MaxIdUint8		  "MAX_uint8_T"
+		  BooleanTrueId		  "true"
+		  BooleanFalseId	  "false"
+		  TypeLimitIdReplacementHeaderFile ""
+		  MemSecPackage		  "--- None ---"
+		  MemSecDataConstants	  "Default"
+		  MemSecDataIO		  "Default"
+		  MemSecDataInternal	  "Default"
+		  MemSecDataParameters	  "Default"
+		  MemSecFuncInitTerm	  "Default"
+		  MemSecFuncExecute	  "Default"
+		  MemSecFuncSharedUtil	  "Default"
+		  GroupConstants	  "Default"
+		  GroupRootInputs	  "Default"
+		  GroupRootOutputs	  "Default"
+		  GroupInternal		  "Default"
+		  GroupParameters	  "Default"
+		  GroupDataTransfer	  "Default"
+		  GroupSharedLocalDataStores "Default"
+		  GroupInstanceSpecificParameters "Default"
+		  GroupModelData	  "Default"
+		}
+		PropName		"Components"
+	      }
+	      CustomProperty {
+		DataType		"string"
+		Name			"DarwinOPIP"
+		Value			"192.168.123.1"
+	      }
+	      CustomProperty {
+		DataType		"int32"
+		Name			"DarwinOPPort"
+		Value			22
+	      }
+	      CustomProperty {
+		DataType		"int32"
+		Name			"DarwinOPTimeout"
+		Value			15
+	      }
+	      CustomProperty {
+		DataType		"int32"
+		Name			"DarwinOPDisconnect"
+		Value			2
+	      }
+	      CustomProperty {
+		DataType		"string"
+		Name			"DarwinOPUser"
+		Value			"darwin"
+	      }
+	      CustomProperty {
+		DataType		"int32"
+		Name			"DarwinOPPassword"
+		Value			111111
+	      }
+	      CustomProperty {
+		DataType		"string"
+		Name			"DarwinOPWork"
+		Value			"/darwin/Linux/Simulink"
+	      }
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  20
+	  Version		  "19.0.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Components		  []
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dw"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovShowResultsExplorer  on
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition    [ 414, 165, 1506, 871 ]
+      ExtraOptions	      "-aBlockCommentType=\"BlockPathComment\" -aIgnoreTestpoints=0 "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    8
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    21
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Delay
+      DelayLengthSource	      "Dialog"
+      DelayLength	      "2"
+      DelayLengthUpperLimit   "100"
+      InitialConditionSource  "Dialog"
+      InitialCondition	      "0.0"
+      ExternalReset	      "None"
+      ShowEnablePort	      off
+      PreventDirectFeedthrough off
+      DiagnosticForDelayLength "None"
+      RemoveDelayLengthCheckInGeneratedCode off
+      InputProcessing	      "Elements as channels (sample based)"
+      UseCircularBuffer	      off
+      SampleTime	      "-1"
+      StateMustResolveToSignalObject off
+      CodeGenStateStorageClass "Auto"
+    }
+    Block {
+      BlockType		      M-S-Function
+      FunctionName	      "matlabfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "arm_copy"
+    Location		    [28, 45, 1252, 1250]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "17"
+    SimulinkSubDomain	    "Simulink"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "7"
+      Position		      [130, 130, 160, 160]
+      ZOrder		      27
+      Value		      "0"
+    }
+    Block {
+      BlockType		      M-S-Function
+      Name		      "DarwinOP communication"
+      SID		      "2"
+      Ports		      [6, 3]
+      Position		      [220, 239, 625, 396]
+      ZOrder		      22
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      DeleteFcn		      "darwinop_communication_setup('DeleteFcn');"
+      ModelCloseFcn	      "darwinop_communication_setup('ModelCloseFcn');"
+      StartFcn		      "darwinop_communication_setup('StartFcn');"
+      StopFcn		      "darwinop_communication_setup('StopFcn');"
+      NameChangeFcn	      "darwinop_communication_setup('NameChangeFcn');"
+      OpenFcn		      "darwinop_communication_setup('OpenFcn');"
+      FunctionName	      "darwinop_communication"
+      Parameters	      "IP,Port,Protocol,Timeout,Frame,ReadIndex,WriteIndex"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		22
+	$ClassName		"Simulink.Mask"
+	SelfModifiable		"on"
+	Display			"image(imread('darwin-blk.jpg'))                                      \n                                   "
+	"                          \nport_label('output',1,'Left Shoulder Pitch(2)/Position')     \nport_label('output',2,'Lef"
+	"t Shoulder Roll(4)/Position')      \nport_label('output',3,'Left Elbow(6)/Position')              \n                 "
+	"                                            \nport_label('input',1,'Right Shoulder Pitch(1)/Goal Position')\nport_lab"
+	"el('input',2,'Left Shoulder Pitch(2)/Torque Enable') \nport_label('input',3,'Right Shoulder Roll(3)/Goal Position') \n"
+	"port_label('input',4,'Left Shoulder Roll(4)/Torque Enable')  \nport_label('input',5,'Right Elbow(5)/Goal Position')  "
+	"       \nport_label('input',6,'Left Elbow(6)/Torque Enable')          "
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  7
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "IP"
+	    Prompt		    "IP"
+	    Value		    "192.168.123.1"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "edit"
+	    Name		    "Port"
+	    Prompt		    "Port"
+	    Value		    "1234"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "tcp"
+	      Cell		      "udp"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Protocol"
+	    Prompt		    "Protocol"
+	    Value		    "tcp"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "edit"
+	    Name		    "Timeout"
+	    Prompt		    "Timeout"
+	    Value		    "0.05"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "Frame"
+	    Prompt		    "Frame"
+	    Value		    "[ 3 1 30 2 0 0 2 2 36 2 3 2 24 1 0 3 3 30 2 0 0 2 4 36 2 3 4 24 1 0 3 5 30 2 0 0 2 6 36 2 3 6 24 1 0]"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "edit"
+	    Name		    "ReadIndex"
+	    Prompt		    "ReadIndex"
+	    Value		    "[ 1 2;3 2;5 2]"
+	  }
+	  Object {
+	    $ObjectID		    29
+	    Type		    "edit"
+	    Name		    "WriteIndex"
+	    Prompt		    "WriteIndex"
+	    Value		    "[ 5 2;15 1;20 2;30 1;35 2;45 1]"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      Delay
+      Name		      "Delay"
+      SID		      "15"
+      Ports		      [1, 1]
+      Position		      [140, 238, 175, 272]
+      ZOrder		      35
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      InputPortMap	      "u0"
+      DelayLength	      "1"
+      InitialCondition	      "2048"
+    }
+    Block {
+      BlockType		      Delay
+      Name		      "Delay1"
+      SID		      "16"
+      Ports		      [1, 1]
+      Position		      [140, 288, 175, 322]
+      ZOrder		      36
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      InputPortMap	      "u0"
+      DelayLength	      "1"
+      InitialCondition	      "2048"
+    }
+    Block {
+      BlockType		      Delay
+      Name		      "Delay2"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [140, 338, 175, 372]
+      ZOrder		      37
+      UserDataPersistent      on
+      UserData		      "DataTag3"
+      InputPortMap	      "u0"
+      DelayLength	      "1"
+      InitialCondition	      "2048"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Mirroir"
+      SID		      "3"
+      Position		      [20, 240, 50, 270]
+      ZOrder		      23
+      Value		      "4095"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Real-time simulation"
+      SID		      "1"
+      Ports		      []
+      Position		      [350, 126, 450, 174]
+      ZOrder		      21
+      LibraryVersion	      "1.33"
+      SourceBlock	      "lib_darwinop/Real-time simulation"
+      SourceType	      "Real-time simulation parameters "
+      TimeScalingFactor	      "1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "14"
+      Ports		      [3]
+      Position		      [805, 304, 835, 336]
+      ZOrder		      34
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecim"
+      "ation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays"
+      "',{struct('MinYLimReal','-5','MaxYLimReal','5','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibil"
+      "ity','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922"
+      " 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 "
+      "1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 "
+      "0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','Lin"
+      "ePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placem"
+      "ent',1),struct('MinYLimReal','-5','MaxYLimReal','5','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVi"
+      "sibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098"
+      "03922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176"
+      "4706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764705882"
+      "3529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'"
+      ",'LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'P"
+      "lacement',2),struct('MinYLimReal','-5','MaxYLimReal','5','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Leg"
+      "endVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627"
+      "4509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529"
+      "411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647"
+      "058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLa"
+      "bel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',tr"
+      "ue,'Placement',3)},'DisplayPropertyDefaults',struct('MinYLimReal','-5','MaxYLimReal','5','YLabelReal','','MinYLi"
+      "mMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
+      "[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666"
+      "6667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254901"
+      "9608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509"
+      "80392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'Li"
+      "neNames',{{[]}},'ShowContent',true,'Placement',1),'DisplayLayoutDimensions',[3 1]),extmgr.Configuration('Tools',"
+      "'Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),"
+      "'Version','2019a','Location',[183 370 900 827])"
+      NumInputPorts	      "3"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "4"
+      Ports		      [2, 1]
+      Position		      [100, 245, 120, 265]
+      ZOrder		      24
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "5"
+      Ports		      [2, 1]
+      Position		      [100, 295, 120, 315]
+      ZOrder		      25
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "6"
+      Ports		      [2, 1]
+      Position		      [100, 345, 120, 365]
+      ZOrder		      26
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Line {
+      ZOrder		      1
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      DstBlock		      "Delay2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      2
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      3
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Delay"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "Mirroir"
+      SrcPort		      1
+      Points		      [13, 0]
+      Branch {
+	ZOrder			5
+	Points			[0, 50]
+	Branch {
+	  ZOrder		  6
+	  Points		  [0, 50]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  7
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			8
+	DstBlock		"Sum"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      9
+      SrcBlock		      "DarwinOP communication"
+      SrcPort		      1
+      Points		      [55, 0; 0, 40]
+      Branch {
+	ZOrder			10
+	DstBlock		"Scope"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			11
+	Points			[0, 168; -661, 0; 0, -191; 86, 0]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      12
+      SrcBlock		      "DarwinOP communication"
+      SrcPort		      2
+      Points		      [41, 0]
+      Branch {
+	ZOrder			13
+	DstBlock		"Scope"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			14
+	Points			[0, 133; -628, 0; 0, -123]
+	DstBlock		"Sum1"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      15
+      SrcBlock		      "DarwinOP communication"
+      SrcPort		      3
+      Points		      [3, 0]
+      Branch {
+	ZOrder			16
+	Points			[0, 67; -523, 0]
+	DstBlock		"Sum2"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			17
+	Points			[0, -40]
+	DstBlock		"Scope"
+	DstPort			3
+      }
+    }
+    Line {
+      ZOrder		      18
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [31, 0; 0, 135]
+      Branch {
+	ZOrder			19
+	Points			[0, 50]
+	Branch {
+	  ZOrder		  20
+	  Points		  [0, 50]
+	  DstBlock		  "DarwinOP communication"
+	  DstPort		  6
+	}
+	Branch {
+	  ZOrder		  21
+	  DstBlock		  "DarwinOP communication"
+	  DstPort		  4
+	}
+      }
+      Branch {
+	ZOrder			22
+	DstBlock		"DarwinOP communication"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      23
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      DstBlock		      "DarwinOP communication"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      24
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      DstBlock		      "DarwinOP communication"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      25
+      SrcBlock		      "Delay2"
+      SrcPort		      1
+      DstBlock		      "DarwinOP communication"
+      DstPort		      5
+    }
+  }
+}
+MatData {
+  NumRecords		  4
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    .%L   8    (     @         %    \"     $    !     0         %  0 %@    $    L    <V5L96"
+    "-T961?<F5A9%]F:65L9',  '-E;&5C=&5D7W=R:71E7V9I96QD<P      #@   & M   &    \"     $         !0    @    !    &     $"
+    "         #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                               "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                 #@   -@!   &    \"     8         "
+    "!0    @    !    -0    $         \"0   *@!                                                                         "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                             #P/P                 "
+    "                                                                                                                  "
+    "                                       #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@! "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                               #@ "
+    "  -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                                           "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "         #P/P                                                                                                     "
+    "                                                                     #@   -@!   &    \"     8         !0    @    !"
+    "    -0    $         \"0   *@!                                                                                     "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                           #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!             "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                       #P/P                                                                       "
+    "                                                                                                   #@   -@!   &   "
+    " \"     8         !0    @    !    -0    $         \"0   *@!                                                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                         #@   -@!   &    \"     8         !0    @    !    -0    $ "
+    "        \"0   *@!                                                                                                 "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "               #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                         "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                       #@   -@!   &    \"     8   "
+    "      !0    @    !    -0    $         \"0   *@!                                                                   "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                             #@   -@!   &    \"     8         !0    @    !    -0    $         \"0 "
+    "  *@!                                                                                                             "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "   #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                                     "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                           #@   -@!   &    \"     8         !0    "
+    "@    !    -0    $         \"0   *@!                                                                               "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                 #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                         #@   -@! "
+    "  &    \"     8         !0    @    !    -0    $         \"0   *@!                                                 "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                               #@   -@!   &    \"     8         !0    @    !    -0"
+    "    $         \"0   *@!                                                                                           "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                     #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                   "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                             #@   -@!   &    \"   "
+    "  8         !0    @    !    -0    $         \"0   *@!                                                             "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                   #@   -@!   &    \"     8         !0    @    !    -0    $       "
+    "  \"0   *@!                                                                                                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "         #@   -@!   &    \"     8         !0    @    !    -0    $         \"0   *@!                               "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                 #@   +@\"   &    \"     8        "
+    " !0    @    !    40    $         \"0   (@\"                                                                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                . "
+    "   \" $   8    (    !@         %    \"     $    ;     0         )    V                                            "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                     X    ( 0  !@    @    &          4    (     0   !L    !          D   #8                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                         #@   - \"   &    \"     8         !0    @    !    5     $         \"0   *"
+    " \"                                                                                                               "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                        .    8\"T "
+    "  8    (     0         %    \"     $    8     0         .    V $   8    (    !@         %    \"     $    U     0  "
+    "       )    J $                                                                                                   "
+    "                                                                                                                  "
+    "                                                                                     / _                          "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "             .    V $   8    (    !@         %    \"     $    U     0         )    J $                            "
+    "                                                                                                                  "
+    "                                                                                                       \\#\\      "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                      .    V $   8    (    !@     "
+    "    %    \"     $    U     0         )    J $                                                                     "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    " / _                                                                                                              "
+    "                                                                                                                  "
+    "                                           .    V $   8    (    !@         %    \"     $    U     0         )    J"
+    " $                                                                                                                "
+    "                                                                                                                  "
+    "                   \\#\\                                                                                          "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "  .    V $   8    (    !@         %    \"     $    U     0         )    J $                                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                               / _                                                                                "
+    "                                                                                                                  "
+    "                                                                         .    V $   8    (    !@         %    \"  "
+    "   $    U     0         )    J $                                                                                  "
+    "                                                                                                                  "
+    "                                                 \\#\\                                                            "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                .    V $   8    (    !@         %    \"     $    U     0         )    J $         "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                       .    V $   "
+    "8    (    !@         %    \"     $    U     0         )    J $                                                    "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                            .    V $   8    (    !@         %    \"     $    U    "
+    " 0         )    J $                                                                                               "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                 .    V $   8    (    !@         %    \"     $    U     0         )    J $                        "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                        .    V $   8    (    !@   "
+    "      %    \"     $    U     0         )    J $                                                                   "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                             .    V $   8    (    !@         %    \"     $    U     0         )   "
+    " J $                                                                                                              "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "  .    V $   8    (    !@         %    \"     $    U     0         )    J $                                       "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                         .    V $   8    (    !@         %    \"  "
+    "   $    U     0         )    J $                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                              .    V $   8    (    !@         %    \"     $    U     0         )    J $           "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                     .    V $   8 "
+    "   (    !@         %    \"     $    U     0         )    J $                                                      "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                          .    V $   8    (    !@         %    \"     $    U     0"
+    "         )    J $                                                                                                 "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "               .    V $   8    (    !@         %    \"     $    U     0         )    J $                          "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                      .    V $   8    (    !@     "
+    "    %    \"     $    U     0         )    J $                                                                     "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                           .    V $   8    (    !@         %    \"     $    U     0         )    J"
+    " $                                                                                                                "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    ".    N (   8    (    !@         %    \"     $   !1     0         )    B (                                         "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                            X    ( 0  !@    @    &          4    (     0   !L    !          D   #8                "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                #@    @!   &    \"     8         !0    @    !    &P    $         \""
+    "0   -@                                                                                                            "
+    "                                                                                                                  "
+    "                                                                      .    T (   8    (    !@         %    \"     "
+    "$   !4     0         )    H (                                                                                     "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                                                                                                                  "
+    "                "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    D     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/P"
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    D     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/P"
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    D     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/P"
+  }
+}

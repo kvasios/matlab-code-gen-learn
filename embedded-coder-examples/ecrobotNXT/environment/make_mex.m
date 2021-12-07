@@ -1,0 +1,15 @@
+mex sfun_acceleration_sensor.c   
+mex sfun_prototype_sensor.c      
+mex sfun_bt_rx.c                 
+mex sfun_soundtone.c             
+mex sfun_bt_tx.c                 
+mex sfun_soundvoltone.c          
+mex sfun_color_sensor.c          
+mex sfun_usb_disconnect.c        
+mex sfun_expfcncallsscheduler.c  
+mex sfun_usb_rx.c                
+mex sfun_gamepad_datalogger.c    
+mex sfun_usb_tx.c                
+mex sfun_ir_seeker.c             
+mex sfun_lcd_var_monitor.c
+mex sfun_nxtcolor_sensor.c

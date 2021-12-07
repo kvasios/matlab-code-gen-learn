@@ -1,0 +1,35 @@
+%% File    : sfun_color_sensor.tlc
+%%
+%% Abstract: Block for HiTechnic Color Sensor of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_color_sensor" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign outputAddr = LibBlockOutputSignalAddr(0, "", "", 0)
+  %assign port = SFcnParamSettings.port
+
+  /* %<Type> Block: %<Name> */
+  %if port == 1
+    ecrobot_get_color_sensor(NXT_PORT_S1, %<outputAddr>);
+  %elseif port == 2
+    ecrobot_get_color_sensor(NXT_PORT_S2, %<outputAddr>);
+  %elseif port == 3
+    ecrobot_get_color_sensor(NXT_PORT_S3, %<outputAddr>);
+  %elseif port == 4
+    ecrobot_get_color_sensor(NXT_PORT_S4, %<outputAddr>);
+  %endif
+%endfunction %% Outputs

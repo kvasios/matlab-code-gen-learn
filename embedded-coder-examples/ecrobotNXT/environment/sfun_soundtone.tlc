@@ -1,0 +1,27 @@
+%% File    : sfun_soundtone.tlc
+%%
+%% Abstract: Block for Sound Tone of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_soundtone" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign freq = LibBlockInputSignal(0, "", "", 0)
+  %assign dur = LibBlockInputSignal(1, "", "", 0)
+
+  /* %<Type> Block: %<Name> */
+  ecrobot_sound_tone(%<freq>, %<dur>, 70);
+%endfunction %% Outputs

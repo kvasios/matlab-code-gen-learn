@@ -1,0 +1,61 @@
+%% File    : sfun_nxtcolor_sensor.tlc
+%%
+%% Abstract: Block for NXT Color Sensor of Lego Mindstorms NXT
+%%
+
+%%   Copyright 2010 The MathWorks, Inc.
+
+%implements "sfun_nxtcolor_sensor" "C"
+
+%% Function: BlockInstanceSetup
+%%
+%function BlockInstanceSetup(block, system) void
+  %openfile buffer
+  #include "ecrobot_external_interface.h"
+  %closefile buffer
+  %<LibCacheIncludes(buffer)>
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs
+%%
+%function Outputs(block, system) Output
+  %assign output = LibBlockOutputSignal(0, "", "", 0)
+  %assign outputAddr = LibBlockOutputSignalAddr(0, "", "", 0)
+  %assign port = SFcnParamSettings.port
+  %assign sensor_mode = SFcnParamSettings.sensor_mode
+
+  /* %<Type> Block: %<Name> */
+  %if port == 1
+    %if sensor_mode == 7
+        ecrobot_get_nxtcolorsensor_rgb(NXT_PORT_S1, %<outputAddr>);
+    %elseif sensor_mode == 6
+        %<output> = ecrobot_get_nxtcolorsensor_id(NXT_PORT_S1);
+    %else
+        %<output> = ecrobot_get_nxtcolorsensor_light(NXT_PORT_S1);
+    %endif
+  %elseif port == 2
+    %if sensor_mode == 7
+        ecrobot_get_nxtcolorsensor_rgb(NXT_PORT_S2, %<outputAddr>);
+    %elseif sensor_mode == 6
+        %<output> = ecrobot_get_nxtcolorsensor_id(NXT_PORT_S2);
+    %else
+        %<output> = ecrobot_get_nxtcolorsensor_light(NXT_PORT_S2);
+    %endif
+  %elseif port == 3
+    %if sensor_mode == 7
+        ecrobot_get_nxtcolorsensor_rgb(NXT_PORT_S3, %<outputAddr>);
+    %elseif sensor_mode == 6
+        %<output> = ecrobot_get_nxtcolorsensor_id(NXT_PORT_S3);
+    %else
+        %<output> = ecrobot_get_nxtcolorsensor_light(NXT_PORT_S3);
+    %endif
+  %elseif port == 4
+    %if sensor_mode == 7
+        ecrobot_get_nxtcolor_sensor_rgb(NXT_PORT_S4, %<outputAddr>);
+    %elseif sensor_mode == 6
+        %<output> = ecrobot_get_nxtcolorsensor_id(NXT_PORT_S4);
+    %else
+        %<output> = ecrobot_get_nxtcolorsensor_light(NXT_PORT_S4);
+    %endif
+  %endif
+%endfunction %% Outputs

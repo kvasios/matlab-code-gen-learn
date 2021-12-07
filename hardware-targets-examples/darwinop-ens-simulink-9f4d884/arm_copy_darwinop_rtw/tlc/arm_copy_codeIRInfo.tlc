@@ -1,0 +1,45 @@
+%function FcnLoadCodeIRInfo() Output 
+codeIRInfoStruct = load('/home/vasi_ko/Documents/Mathworks_docs/the_world_of_tlc_and_code_gen_control/examplesOfOtherCustomTargetSupportPackages/darwinop-ens-simulink-9f4d884/arm_copy_darwinop_rtw/tlc/codeIRInfo.mat');
+codeInfo = codeIRInfoStruct.codeInfo;
+%endfunction
+
+%function FcnGetIsInheritedSampleTime() void
+%assign tmpIdx = 0
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetDSMIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetEIIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetRootInportsMapFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetEOIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetParamIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetArSharedParamIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetInstanceSpecificParamIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+

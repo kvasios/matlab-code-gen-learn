@@ -1,0 +1,55 @@
+%implements s0_b0_gcnck_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(3, 0, "")> %% rtb_DarwinOPcommunication_o1
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_DarwinOPcommunication_o2
+%<SLibCGIRAccessLocalVar(5, 0, "")> %% rtb_DarwinOPcommunication_o3
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcOutputsFcnOfS0B1 = OpaqueTLCBlockFcn("Outputs", 0, 1, 0, 0)
+%assign tlcOutputsFcnOfS0B3 = OpaqueTLCBlockFcn("Outputs", 0, 3, 0, 0)
+/* Delay: '<Root>/Delay' */
+/*@>290e*/arm_copy_B./*@>345e*/Delay/*@>6e6*/ = /*@>29b0*/arm_copy_DWork./*@>3470*/Delay_DSTATE;
+/* Delay: '<Root>/Delay1' */
+/*@>2914*/arm_copy_B./*@>3461*/Delay1/*@>6f2*/ = /*@>29b6*/arm_copy_DWork./*@>3473*/Delay1_DSTATE;
+/* Delay: '<Root>/Delay2' */
+/*@>291a*/arm_copy_B./*@>3464*/Delay2/*@>6fe*/ = /*@>29bc*/arm_copy_DWork./*@>3476*/Delay2_DSTATE;
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B1)
+/* M-S-Function: '<Root>/DarwinOP communication' incorporates:
+ *  Constant: '<Root>/Constant'
+ */
+%<SLibCG_DumpSSCode("/*@[2d38*/",tlcOutputsFcnOfS0B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B3)
+/* M-S-Function: '<Root>/Real-time simulation' */
+%<SLibCG_DumpSSCode("/*@[2d3b*/",tlcOutputsFcnOfS0B3,"/*@]*/")>\
+%endif
+/* Update for Delay: '<Root>/Delay' incorporates:
+ *  Constant: '<Root>/Mirroir'
+ *  Sum: '<Root>/Sum'
+ */
+/*@>29d4*/arm_copy_DWork./*@>3479*/Delay_DSTATE/*@>71a*/ = /*@>2984*/arm_copy_P./*@>3467*/Mirroir_Value/*@>11c2*/ - /*@>1e14*/rtb_DarwinOPcommunication_o1;
+/* Update for Delay: '<Root>/Delay1' incorporates:
+ *  Constant: '<Root>/Mirroir'
+ *  Sum: '<Root>/Sum1'
+ */
+/*@>29da*/arm_copy_DWork./*@>347c*/Delay1_DSTATE/*@>726*/ = /*@>298a*/arm_copy_P./*@>346a*/Mirroir_Value/*@>11c8*/ - /*@>1e18*/rtb_DarwinOPcommunication_o2;
+/* Update for Delay: '<Root>/Delay2' incorporates:
+ *  Constant: '<Root>/Mirroir'
+ *  Sum: '<Root>/Sum2'
+ */
+/*@>29e0*/arm_copy_DWork./*@>347f*/Delay2_DSTATE/*@>732*/ = /*@>2990*/arm_copy_P./*@>346d*/Mirroir_Value/*@>11ce*/ - /*@>1e1c*/rtb_DarwinOPcommunication_o3;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction
